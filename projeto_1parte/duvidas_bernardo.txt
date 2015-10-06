@@ -1,0 +1,9 @@
+-criar entity p manufacturer?
+
+-update->e necessario que tds os valores de Values of physical measures sejam primary keys?
+
+-tabela do reading? (como armazenar os 60 valores p.ex.)
+
+-values of physical measure are just the ones stated?
+
+-PAN switch?
