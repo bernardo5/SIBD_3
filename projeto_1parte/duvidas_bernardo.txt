@@ -6,4 +6,6 @@
 
 -values of physical measure are just the ones stated?
 
--PAN switch?
+-PAN switch? (patient and devices)
+
+-PAN data transfer?
