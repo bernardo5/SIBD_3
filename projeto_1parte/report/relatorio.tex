@@ -1,0 +1,38 @@
+\documentclass[a4paper]{article}
+
+\usepackage[portuguese]{babel}
+\usepackage{comment}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage[hypcap]{caption} % makes \ref point to top of figures and tables
+\usepackage{lscape}
+
+\graphicspath{ {images/} }
+
+\begin{document}
+
+\input{./rosto.tex}
+\hypersetup{%
+    pdfborder = {0 0 0}
+}
+
+\tableofcontents
+\pagenumbering{gobble}
+\pagebreak
+\pagenumbering{arabic}
+\section{Modelo E-R}
+%explicações do modelo
+\begin{landscape}
+\includegraphics{Diagrama1.png}
+\end{landscape}
+\pagebreak
+
+\section{Tabelas}
+
+
+\end{document}
