@@ -11,6 +11,7 @@
 \usepackage{indentfirst}
 \usepackage[hypcap]{caption} % makes \ref point to top of figures and tables
 \usepackage{lscape}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
 
 \graphicspath{ {images/} }
 
@@ -33,6 +34,52 @@
 \pagebreak
 
 \section{Tabelas}
+De acordo com o modelo E-R especificado anteriormente, a conversão em tabelas é feita da seguinte forma:
 
+\begin{enumerate}
+  \item Conversão de entidades fortes e suas especializações (quando aplicável):
+  		\textit{Medical\_device(\underline{Serial}, Description, Internet\_domain\_name)}
+  		
+  		\textit{Input\_sensor(\underline{Serial})}
+  		
+  			\tab{Serial:FK(Medical\_device)}
+  			
+  		\textit{Actuator(\underline{Serial})}
+  		
+  			\tab{Serial:FK(Medical\_device)}
+  		
+  		\textit{PAN (\underline{Internet\_domain\_name}, Phone\_number)}
+  		
+  		\textit{Patient (\underline{National\_health\_service\_number}, Patient\_name, Address, Internet\_domain\_name, Digit\_code, Start, End)}
+  		
+  				\tab{Internet\_domain\_name:FK(PAN)}
+  				
+  				\tab{Digit\_code:FK(Municipality)}
+  				
+  				\tab{Start:FK(Time\_period)}
+  				
+  				\tab{End:FK(Time\_period)}
+  				
+  		\textit{Municipality (\underline{Digit\_code}, Municipality\_name)}
+  		
+  		\textit{Time\_period (\underline{Start}, \underline{End}, Internet\_domain\_name, Digit\_code)}
+  		
+  		\tab{Internet\_domain\_name:FK(PAN)}
+  				
+  		\tab{Digit\_code:FK(Municipality)}
+  		
+  		\item Conversão de \textit{weak-entities}:
+  		
+  		\textit{Readings (\underline{Serial}, \underline{Physical\_measures}, Value, Time\_instant)}
+  			
+  			\tab{Serial: FK(Input\_sensor)}
+  			
+  		\textit{Settings (\underline{Serial}, \underline{Physical\_measures}, Value, Time\_instant)}
+  			
+  			\tab{Serial: FK(Actuator)}
+\end{enumerate}
 
+De acordo com a metodologia, seguir-se-ia a conversão de relações e agregações. Porém, sendo as relações presentes no modelo E-R do tipo \textit{one-to-one} ou \textit{many-to-one}, não é necessário a atribuição de uma tabela para a conversão. Esta estará assim presente nas tabelas das suas entidades envolvidas.
+
+De igual forma, por não atribuirmos nenhuma agregação não se construiu qualquer tabela para este conceito.
 \end{document}
