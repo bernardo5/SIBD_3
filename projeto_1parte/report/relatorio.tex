@@ -28,6 +28,17 @@
 \pagenumbering{arabic}
 \section{Modelo E-R}
 %explicações do modelo
+De acordo com o enunciado, a construção do modelo e-r foi construído de acordo com os seguintes critérios:
+
+\begin{itemize}
+	\item as entidades Medical\_device, Input\_sensor, Actuator, PAN, Pacient e Municipality, foram retiradas diretamente do enunciado, tal como os respectivos atributos
+	
+	\item como um Medical\_device pode ser tanto um Input\_sensor como um Actuator tendo de ser obrigatoriamente pelo menos um deles. Desta forma, colocou-se uma especialização total ISA, como se pode verificar no diagrama (duplo traço)  
+
+	
+\end{itemize}
+
+%figura do e-r
 \begin{landscape}
 \includegraphics{Diagrama1.png}
 \end{landscape}
@@ -62,11 +73,13 @@ De acordo com o modelo E-R especificado anteriormente, a conversão em tabelas �
   				
   		\textit{Municipality (\underline{Digit\_code}, Municipality\_name)}
   		
-  		\textit{Time\_period (\underline{Start}, \underline{End}, Internet\_domain\_name, Digit\_code)}
+  		\textit{Time\_period (\underline{Start}, \underline{End}, Internet\_domain\_name, Digit\_code, Serial\_number)}
   		
   		\tab{Internet\_domain\_name:FK(PAN)}
   				
   		\tab{Digit\_code:FK(Municipality)}
+  		
+  		\tab{Serial\_number:FK(Medical\_device)}
   		
   		\item Conversão de \textit{weak-entities}:
   		
