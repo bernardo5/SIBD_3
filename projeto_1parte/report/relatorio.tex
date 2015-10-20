@@ -11,6 +11,10 @@
 \usepackage{indentfirst}
 \usepackage[hypcap]{caption} % makes \ref point to top of figures and tables
 \usepackage{lscape}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{oz}
+
 \newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
 
 \graphicspath{ {images/} }
@@ -22,53 +26,51 @@
     pdfborder = {0 0 0}
 }
 
-\tableofcontents
-\pagenumbering{gobble}
-\pagebreak
 \pagenumbering{arabic}
 \section{Modelo E-R}
 %explicações do modelo
-De acordo com o enunciado, a construção do modelo e-r foi construído de acordo com os seguintes critérios:
+De acordo com o enunciado, a construção do modelo E-R, apresentado na página seguinte, foi construído de acordo com os seguintes critérios:
 \begin{itemize}
 
 	\item as entidades \textit{Medical\_device, Input\_sensor, Actuator, 
-	PAN, Pacient e Municipality}, foram retiradas diretamente do enunciado, tal como os respectivos atributos
+	PAN, Pacient} e \textit{Municipality}, foram retiradas diretamente do enunciado, tal como os respectivos atributos;
 	
 	\item como um \textit{Medical\_device} pode ser tanto um \textit{Input\_sensor} 
-	como um Actuator tendo de ser obrigatoriamente pelo menos um deles.
-	Desta forma, colocou-se uma especialização total ISA, como se pode verificar no diagrama (duplo traço)
+	como um \textit{Actuator}, tendo de ser obrigatoriamente pelo menos um deles.
+	Desta forma, colocou-se uma especialização total ISA, como se pode verificar no diagrama (duplo traço);
 
-	\item as \textit{weak entities} Readings e Settings foram consideradas como tal, uma vez que tanto uma como a outra não têm o
-	conjunto de atributos necessário para servir como \textit{primary key} para a entidades. Assim, assume-se como discriminador 
-	o atributo \textit{Physical\_measures} de forma a poder distinguir qual a grandeza medida/lida. Estas entidades são são totalmente
-	descritas quando lhe são associadas o \textit{Serial\_number} do \textit{Medical\_device} associado. O atributo \textit{value} é
-	\textit{multi-value} pois consoante o dispositivo, o número de parâmetros retirados/lidos é variável. Cada instante de 
+	\item as \textit{weak entities} \textit{Readings} e \textit{Settings} foram consideradas como tal, uma vez que tanto uma como a outra não têm o
+	conjunto de atributos necessários para servir como \textit{primary key} para entidades fortes. Assim, assume-se como discriminador 
+	o atributo \textit{Physical\_measures} de forma a poder distinguir qual a grandeza medida/lida. Estas entidades são totalmente
+	descritas quando lhes são associadas o \textit{Serial\_number} do \textit{Medical\_device} respetivo. O atributo \textit{value} é
+	\textit{multi-valued} pois consoante o dispositivo, o número de parâmetros retirados/lidos é variável. Cada instante de 
 	leitura/escrita é 
-	armazenado no atributo \textit{time\_instant}
+	armazenado no atributo \textit{Time\_instant};
 	
 	\item a relação \textit{Connects} evidencia a ligação ternária entre as entidades \textit{Medical\_device, PAN} e 
 	\textit{Time\_period}. Esta deve-se ao facto de vários \textit{Medical\_devices} se conectarem a um \textit{PAN} (e apenas um),
-	 durante um determinado período de tempo. A necessidade de participação da entidade período de tempo, deve-se a possíveis
-	 necessidades de remoção de um aparelho (temporaria ou permanentemente)
+	 durante um determinado período de tempo. A necessidade de participação da entidade \textit{Time\_period}, deve-se a possíveis
+	 necessidades de remoção de um aparelho (temporária ou permanentemente);
 	 
 	\item a relação \textit{Have} representa a ligação ternária entre as entidades \textit{Patient, PAN} e 
 	\textit{Time\_period}. Esta deve-se ao facto de um \textit{Patient} se conectar aos seus \textit{Medical\_devices}
 	através de um \textit{PAN} (e apenas um \textit{PAN} por \textit{Patient}),
-	 durante um determinado período de tempo. A necessidade de participação da entidade período de tempo, deve-se à recuperação de
-	 um paciente. Quando este facto ocorre o \textit{PAN} pode também ser atribuído a outro paciente
+	 durante um determinado período de tempo. A necessidade de participação da entidade \textit{Time\_period}, deve-se à possível recuperação de
+	 um paciente. Quando este facto ocorre, o \textit{PAN} pode também ser atribuído a outro paciente;
 	 
 	 \item as relações ternárias \textit{Lives\_with} e \textit{Lives\_in} mostram a possibilidade de dois pacientes morarem juntos
-	 durante certos períodos de tempo e a de um paciente morar num determinado município também durante certo período de tempo
+	 durante certos períodos de tempo e a de um paciente morar num determinado município também durante certo período de tempo.
 \end{itemize}
+
 \pagebreak
 %figura do e-r
 \begin{landscape}
-\includegraphics[keepaspectratio]{Diagrama1.png}
+\includegraphics{Diagrama1.png}
 \end{landscape}
 \pagebreak
 
 \section{Tabelas}
-De acordo com o modelo E-R especificado anteriormente, a conversão em tabelas é feita da seguinte forma:
+De acordo com o modelo E-R especificado anteriormente e com a metodologia estudada, a conversão em tabelas é feita da seguinte forma:
 
 \begin{enumerate}
   \item Conversão de entidades fortes e suas especializações (quando aplicável):
