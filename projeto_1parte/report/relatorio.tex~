@@ -58,7 +58,7 @@ De acordo com o enunciado, a construção do modelo e-r foi construído de acord
 	 durante um determinado período de tempo. A necessidade de participação da entidade período de tempo, deve-se à recuperação de
 	 um paciente. Quando este facto ocorre o \textit{PAN} pode também ser atribuído a outro paciente
 	 
-	 \item as relações ternárias \textit{Lives\_with} e \textit{Lives\_in} mostram a possibilidade de dois pacientes morarem juntos
+	 \item as relações ternárias \textit{Lives\with} e \textit{Lives\in} mostram a possibilidade de dois pacientes morarem juntos
 	 durante certos períodos de tempo e a de um paciente morar num determinado município também durante certo período de tempo
 	
 \end{itemize}
