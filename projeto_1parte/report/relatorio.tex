@@ -49,17 +49,17 @@ De acordo com o enunciado, a construção do modelo E-R, apresentado na página 
 	
 	\item a relação \textit{Connects} evidencia a ligação ternária entre as entidades \textit{Medical\_device, PAN} e 
 	\textit{Time\_period}. Esta deve-se ao facto de vários \textit{Medical\_devices} se conectarem a um \textit{PAN} (e apenas um),
-	 durante um determinado período de tempo. A necessidade de participação da entidade \textit{Time\_period}, deve-se a possíveis
+	 durante um determinado período de tempo (apenas um período por relação). A necessidade de participação da entidade \textit{Time\_period}, deve-se a possíveis
 	 necessidades de remoção de um aparelho (temporária ou permanentemente);
 	 
 	\item a relação \textit{Have} representa a ligação ternária entre as entidades \textit{Patient, PAN} e 
 	\textit{Time\_period}. Esta deve-se ao facto de um \textit{Patient} se conectar aos seus \textit{Medical\_devices}
-	através de um \textit{PAN} (e apenas um \textit{PAN} por \textit{Patient}),
-	 durante um determinado período de tempo. A necessidade de participação da entidade \textit{Time\_period}, deve-se à possível recuperação de
+	através de um \textit{PAN} (apenas um \textit{PAN} por \textit{Patient}),
+	 durante um determinado período de tempo (apenas um período por relação). A necessidade de participação da entidade \textit{Time\_period}, deve-se à possível recuperação de
 	 um paciente. Quando este facto ocorre, o \textit{PAN} pode também ser atribuído a outro paciente;
 	 
 	 \item as relações ternárias \textit{Lives\_with} e \textit{Lives\_in} mostram a possibilidade de dois pacientes morarem juntos
-	 durante certos períodos de tempo e a de um paciente morar num determinado município também durante certo período de tempo.
+	 durante certos períodos de tempo (apenas um período por relação) e a de um paciente morar num determinado município também durante certo período de tempo.
 \end{itemize}
 
 \pagebreak
@@ -98,13 +98,17 @@ De acordo com o modelo E-R especificado anteriormente e com a metodologia estuda
   				
   		\textit{Municipality (\underline{Digit\_code}, Municipality\_name)}
   		
-  		\textit{Time\_period (\underline{Start}, \underline{End}, Internet\_domain\_name, Digit\_code, Serial\_number)}
+  		\textit{Time\_period (\underline{Start}, \underline{End}, Internet\_domain\_name, Digit\_code, Serial\_number, National\_Health\_Service\_number1, National\_Health\_Service\_number2)}
   		
   		\tab{Internet\_domain\_name:FK(PAN)}
   				
   		\tab{Digit\_code:FK(Municipality)}
   		
   		\tab{Serial\_number:FK(Medical\_device)}
+  		
+  		\tab{National\_Health\_Service\_number1:FK(Patient)}
+  		
+  		\tab{National\_Health\_Service\_number2:FK(Patient)}
   		
   		\item Conversão de \textit{weak-entities}:
   		
