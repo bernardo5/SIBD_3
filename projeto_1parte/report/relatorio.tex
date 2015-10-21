@@ -32,34 +32,34 @@
 De acordo com o enunciado, a construção do modelo E-R, apresentado na página seguinte, foi construído de acordo com os seguintes critérios:
 \begin{itemize}
 
-	\item as entidades \textit{Medical\_device, Input\_sensor, Actuator, 
-	PAN, Pacient} e \textit{Municipality}, foram retiradas diretamente do enunciado, tal como os respectivos atributos;
+	\item as entidades \textit{Medical\_Device, Input\_Sensor, Actuator, 
+	PAN, Pacient} e \textit{Municipality}, foram retiradas diretamente do enunciado, tal como os respetivos atributos;
 	
-	\item como um \textit{Medical\_device} pode ser tanto um \textit{Input\_sensor} 
+	\item como um \textit{Medical\_Device} pode ser tanto um \textit{Input\_Sensor} 
 	como um \textit{Actuator}, tendo de ser obrigatoriamente pelo menos um deles.
 	Desta forma, colocou-se uma especialização total ISA, como se pode verificar no diagrama (duplo traço);
 
 	\item as \textit{weak entities} \textit{Readings} e \textit{Settings} foram consideradas como tal, uma vez que tanto uma como a outra não têm o
 	conjunto de atributos necessários para servir como \textit{primary key} para entidades fortes. Assim, assume-se como discriminador 
-	o atributo \textit{Physical\_measures} de forma a poder distinguir qual a grandeza medida/lida. Estas entidades são totalmente
-	descritas quando lhes são associadas o \textit{Serial\_number} do \textit{Medical\_device} respetivo. O atributo \textit{value} é
+	o atributo \textit{Physical\_Measures} de forma a poder distinguir qual a grandeza medida/lida. Estas entidades são totalmente
+	descritas quando lhes são associadas o \textit{Serial\_Number}, de um certo \textit{Manufacturer}, do \textit{Medical\_Device} respetivo. O atributo \textit{value} é
 	\textit{multi-valued} pois consoante o dispositivo, o número de parâmetros retirados/lidos é variável. Cada instante de 
 	leitura/escrita é 
 	armazenado no atributo \textit{Time\_instant};
 	
-	\item a relação \textit{Connects} evidencia a ligação ternária entre as entidades \textit{Medical\_device, PAN} e 
-	\textit{Time\_period}. Esta deve-se ao facto de vários \textit{Medical\_devices} se conectarem a um \textit{PAN} (e apenas um),
-	 durante um determinado período de tempo (apenas um período por relação). A necessidade de participação da entidade \textit{Time\_period}, deve-se a possíveis
+	\item a relação \textit{Connects} evidencia a ligação ternária entre as entidades \textit{Medical}\textit{\_Device},\textit{ PAN} e 
+	\textit{Time\_period}. Esta deve-se ao facto de vários \textit{Medical}\textit{\_Devices} se conectarem a um \textit{PAN} (e apenas um),
+	 durante um determinado período de tempo. A necessidade de participação da entidade \textit{Time\_period}, deve-se a possíveis
 	 necessidades de remoção de um aparelho (temporária ou permanentemente);
 	 
 	\item a relação \textit{Have} representa a ligação ternária entre as entidades \textit{Patient, PAN} e 
-	\textit{Time\_period}. Esta deve-se ao facto de um \textit{Patient} se conectar aos seus \textit{Medical\_devices}
+	\textit{Time\_period}. Esta deve-se ao facto de um \textit{Patient} se conectar aos seus \textit{Medical\_Devices}
 	através de um \textit{PAN} (apenas um \textit{PAN} por \textit{Patient}),
-	 durante um determinado período de tempo (apenas um período por relação). A necessidade de participação da entidade \textit{Time\_period}, deve-se à possível recuperação de
+	 durante um determinado período de tempo. A necessidade de participação da entidade \textit{Time\_period}, deve-se à possível recuperação de
 	 um paciente. Quando este facto ocorre, o \textit{PAN} pode também ser atribuído a outro paciente;
 	 
 	 \item as relações ternárias \textit{Lives\_with} e \textit{Lives\_in} mostram a possibilidade de dois pacientes morarem juntos
-	 durante certos períodos de tempo (apenas um período por relação) e a de um paciente morar num determinado município também durante certo período de tempo.
+	 durante certos períodos de tempo e a de um paciente morar num determinado município também durante certo período de tempo.
 \end{itemize}
 
 \pagebreak
@@ -74,54 +74,85 @@ De acordo com o modelo E-R especificado anteriormente e com a metodologia estuda
 
 \begin{enumerate}
   \item Conversão de entidades fortes e suas especializações (quando aplicável):
-  		\textit{Medical\_device(\underline{Serial}, Description, Internet\_domain\_name)}
+  
+  		\textit{Medical\_Device(\underline{Serial\_Number}, \underline{Manufacturer}, Description)}
   		
-  		\textit{Input\_sensor(\underline{Serial})}
+  		\textit{Input\_Sensor(\underline{Serial\_Number}, \underline{Manufacturer})}
   		
-  			\tab{Serial:FK(Medical\_device)}
+  			\tab{Serial\_Number:FK(Medical\_Device)}
   			
-  		\textit{Actuator(\underline{Serial})}
+  			\tab{Manufacturer:FK(Medical\_Device)}
+  			
+  		\textit{Actuator(\underline{Serial\_Number}, \underline{Manufacturer})}
   		
-  			\tab{Serial:FK(Medical\_device)}
+  			\tab{Serial\_Number:FK(Medical\_Device)}
+			
+			\tab{Manufacturer:FK(Medical\_Device)}  
+					
+  		\textit{PAN (\underline{Internet\_Domain\_Name}, Phone\_Number)}
   		
-  		\textit{PAN (\underline{Internet\_domain\_name}, Phone\_number)}
+  		\textit{Patient (\underline{National\_Health\_Service\_number}, Patient\_Name, Address, Internet\_Domain\_Name)}
   		
-  		\textit{Patient (\underline{National\_health\_service\_number}, Patient\_name, Address, Internet\_domain\_name, Digit\_code, Start, End)}
-  		
-  				\tab{Internet\_domain\_name:FK(PAN)}
+  				\tab{Internet\_Domain\_Name:FK(PAN)}
   				
-  				\tab{Digit\_code:FK(Municipality)}
-  				
-  				\tab{Start:FK(Time\_period)}
-  				
-  				\tab{End:FK(Time\_period)}
-  				
-  		\textit{Municipality (\underline{Digit\_code}, Municipality\_name)}
+  		\textit{Municipality (\underline{Digit\_code}, Municipality\_Name)}
   		
-  		\textit{Time\_period (\underline{Start}, \underline{End}, Internet\_domain\_name, Digit\_code, Serial\_number, National\_Health\_Service\_number1, National\_Health\_Service\_number2)}
+  		\textit{Time\_period (\underline{start}, \underline{end}, Internet\_Domain\_Name, National\_Health\_Service\_number)}
   		
-  		\tab{Internet\_domain\_name:FK(PAN)}
-  				
-  		\tab{Digit\_code:FK(Municipality)}
+  		\tab{Internet\_Domain\_Name:FK(PAN)}
   		
-  		\tab{Serial\_number:FK(Medical\_device)}
+  		\tab{National\_Health\_Service\_number:FK(Patient)}
+  		
+  		\item Conversão de \textit{weak-entities}:
+  		
+  		\textit{Readings (\underline{Serial\_Number}, \underline{Manufacturer}, \underline{Physical\_Measures}, Value, Time\_instant)}
+  			
+  			\tab{Serial\_Number: FK(Input\_Sensor)}
+  			
+  			\tab{Manufacturer:FK(Input\_Sensor)}
+  			
+  		\textit{Settings (\underline{Serial\_Number}, \underline{Manufacturer}, \underline{Physical\_Measures}, Value, Time\_instant)}
+  			
+  			\tab{Serial\_Number: FK(Actuator)}
+  			
+  			\tab{Manufacturer:FK(Actuator)}
+  			
+  		\item conversão de relações:
+  		
+  		\textit{Connects (\underline{start}, \underline{end}, \underline{Serial\_Number},\underline{Manufacturer}, Internet\_Domain\_Name)}
+  		
+  		\tab{start: FK(Time\_period)}
+  		
+  		\tab{end: FK(Time\_period)}
+  		
+  		\tab{Serial\_Number: FK(Medical\_Device)}
+  		
+  		\tab{Manufacturer: FK(Medical\_Device)}
+  		
+  		\tab{Serial\_Number: FK(Actuator)}
+  		
+  		\tab{Internet\_Domain\_Name: FK(PAN)}
+  		
+  		\textit{Lives\_in (\underline{National\_Health\_Servive\_number, start, end}, Digit\_Code)}
+  		
+  		\tab{National\_Health\_Servive\_number:FK(Patient)}
+  		
+  		\tab{start: FK(Time\_period)}
+  		
+  		\tab{end: FK(Time\_period)}
+  		
+  		\tab{Digit\_Code: FK(Municipality)}
+  		
+  		\textit{Lives\_with(\underline{National\_Health\_Service\_number1, National\_Health\_Service\_number2, start, end})}
   		
   		\tab{National\_Health\_Service\_number1:FK(Patient)}
   		
   		\tab{National\_Health\_Service\_number2:FK(Patient)}
   		
-  		\item Conversão de \textit{weak-entities}:
+  		\tab{start: FK(Time\_period)}
   		
-  		\textit{Readings (\underline{Serial}, \underline{Physical\_measures}, Value, Time\_instant)}
-  			
-  			\tab{Serial: FK(Input\_sensor)}
-  			
-  		\textit{Settings (\underline{Serial}, \underline{Physical\_measures}, Value, Time\_instant)}
-  			
-  			\tab{Serial: FK(Actuator)}
+  		\tab{end: FK(Time\_period)}  		
 \end{enumerate}
 
-De acordo com a metodologia, seguir-se-ia a conversão de relações e agregações. Porém, sendo as relações presentes no modelo E-R do tipo \textit{one-to-one} ou \textit{many-to-one}, não é necessário a atribuição de uma tabela para a conversão. Esta estará assim presente nas tabelas das suas entidades envolvidas.
-
-De igual forma, por não atribuirmos nenhuma agregação não se construiu qualquer tabela para este conceito.
+De acordo com a metodologia, seguir-se-ia a conversão de agregações. Porém, por não atribuirmos nenhuma agregação não se construiu qualquer tabela para este conceito.
 \end{document}
