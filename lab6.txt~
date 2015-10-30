@@ -1,0 +1,61 @@
+Part 1 
+
+1 - SELECT branch_name FROM branch WHERE branch_city='Brooklyn';
+
+2 - SELECT branch.branch_name, account_number FROM branch, account WHERE (branch_city='Brooklyn')AND (branch.branch_name=account.branch_name);
+
+
+3 - SELECT branch.branch_name, account.account_number, customer_name FROM branch, account, depositor WHERE (branch_city='Brooklyn')AND (branch.branch_name=account.branch_name)AND (depositor.account_number=account.account_number)
+    -> ;
+
+4 - Johnson
+
+5 - select
+distinct
+customer_name
+from
+depositor 
+as
+d
+where
+not
+exists
+(
+select
+branch_name
+from
+branch 
+as
+b
+where
+branch_city = 'Brooklyn'
+and
+branch_name 
+not
+in
+(
+select
+branch_name
+from
+account 
+as
+a, depo
+sitor as d2
+where
+a.account_number = d2.account_number
+and
+d2.customer_name = d.customer_name));
+
+
+5 - Retorna o nome do depositor que obedeça à condição de não existir um branch de Brooklyn onde não haja um branch que o customer não enha conta
+
+6 - select distinct customer_name from depositor as d
+where not exists(select branch_name from branch as b where
+branch_city = 'Brooklyn' and branch_name not exists(SELECT acount.branch_name FROM account, depositor WHERE account.account_number=depositor.account_number and customer_name = d.customer_name));
+
+?
+
+8 -?
+
+select distinct customer.customer_name from depositor  as d, customer, branch where not exists ( select branch.branch_name from branch  as b where branch.branch_city=customer.customer_city and  branch_name  not in ( select branch_name from account  as a, depositor where a.account_number = depositor.account_number and depositor.customer_name = d.customer_name));
+
