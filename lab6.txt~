@@ -53,11 +53,19 @@ d2.customer_name = d.customer_name));
 where not exists(select branch_name from branch as b where
 branch_city = 'Brooklyn' and not exists(SELECT a.account_number FROM account as a, depositor as d2 WHERE a.branch_name=b.branch_name and a.account_number = d2.account_number and d2.customer_name=d.customer_name));
 
-?
 
-8 -?
+9.
+select distinct customer_name
+from depositor as d natural join customer as c
+where not exists(
+select branch_name from branch as b 
+where branch_city = c.customer_city
+and not exists (
+select a.account_number from account as a, depositor as d2
+where a.branch_name = b.branch_name 
+and a.account_number = d2.account_number 
+and d2.customer_name = d.customer_name));
 
-select distinct customer_name from depositor  as d, customer as c where not exists ( select branch_name from branch  as b where branch_city=c.customer_city and  not exists ( select a.account_number from account  as a, depositor as d2 where a.branch_name = b.branch_name and a.account_number = d2.account_number and d2.customer_name=d.customer_name));
 
 
 
