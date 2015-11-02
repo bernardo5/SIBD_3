@@ -1,0 +1,31 @@
+1
+
+create function absolute_balance(c_name varchar(255)) returns integer begin declare abs_bal integer; select (sum(a.balance)-sum(l.amount)) into abs_bal from account as a, depositor as d, borrower as b, loan as l where a.account_number=d.account_number and d.customer_name=b.customer_name and b.loan_number=l.loan_number and d.customer_name=c_name; return abs_bal; end$$
+delimiter ;
+
+
+3
+select customer_name from customer
+    -> where absolute_balance(customer_name)>=all(select absolute_balance(b.customer_name) from borrower as b, depositor as d where b.customer_name=d.customer_name);
+
+
+Part 2
+
+
+1 
+
+ create procedure customers_in_branch(in b_name varchar(255))
+    -> begin
+    -> select customer_name
+    -> from depositor as d, account as a
+    -> where d.account_number=a.account_number
+    -> and a.branch_name=b_name;
+    -> end$$
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter ;
+mysql> call customers_in_branch('Brighton')
+    -> ;
+
+
+
