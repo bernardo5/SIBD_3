@@ -1,15 +1,18 @@
-drop table if exists Patient;
-drop table if exists PAN;
-drop table if exists Device;
-drop table if exists Sensor;
-drop table if exists Actuator;
-drop table if exists Municipality;
-drop table if exists Period;
 drop table if exists Reading;
 drop table if exists Setting;
-drop table if exists Wears;
-drop table if exists Lives;
+drop table if exists Sensor;
+drop table if exists Actuator;
 drop table if exists Connects;
+drop table if exists Device;
+drop table if exists Lives;
+drop table if exists Wears;
+drop table if exists Patient;
+drop table if exists PAN;
+drop table if exists Municipality;
+drop table if exists Period;
+
+
+
 
 create table Patient(
 	number varchar(40),
