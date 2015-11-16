@@ -22,7 +22,7 @@ create table Patient(
 
 create table PAN(
 	domain varchar(255),
-	phone integer,
+	phone varchar(20),
 	primary key(domain));
 
 create table Device(
