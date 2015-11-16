@@ -12,8 +12,6 @@ drop table if exists Municipality;
 drop table if exists Period;
 
 
-
-
 create table Patient(
 	number varchar(40),
 	name varchar(255),
@@ -104,10 +102,10 @@ create table Connects(
 
 
 
-insert into Patient values ('001-54245-1555555', 'Halloween', 'Esquina 24');
-insert into Patient values ('001-54245-1555575', 'Dino Diaxo', 'Cabo Verde');
-insert into Patient values ('001-54745-1555555', 'Valete', 'Amadora');
-insert into Patient values ('001-54245-1855555', 'Timor', 'Cova da Moura');
+insert into Patient values ('001-54245-1555555', 'Bernardo Gomes', 'Rua Alves Redol');
+insert into Patient values ('001-54245-1555575', 'Diogo Martins', 'Avenida João Crisóstomo');
+insert into Patient values ('001-54745-1555555', 'Diogo Proença', 'Avenida Praia da Vitória');
+insert into Patient values ('001-54245-1855555', 'Zé Manel', 'Avenida Duque de Ávila');
 
 insert into PAN values ('www.pan1.pt', '+351 91 000 00 00');
 insert into PAN values ('www.pan2.pt', '+351 91 000 00 01');
