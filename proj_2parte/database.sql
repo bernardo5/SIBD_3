@@ -101,3 +101,32 @@ create table Connects(
 	foreign key(start, end) references Period(start, end),
 	foreign key(snum, manuf) references Device(serialnum, manufacturer),
 	foreign key(pan) references PAN(domain));
+
+
+
+insert into Patient values ('001-54245-1555555', 'Halloween', 'Esquina 24');
+insert into Patient values ('001-54245-1555575', 'Dino Diaxo', 'Cabo Verde');
+insert into Patient values ('001-54745-1555555', 'Valete', 'Amadora');
+insert into Patient values ('001-54245-1855555', 'Timor', 'Cova da Moura');
+
+insert into PAN values ('www.pan1.pt', '+351 91 000 00 00');
+insert into PAN values ('www.pan2.pt', '+351 91 000 00 01');
+insert into PAN values ('www.pan3.pt', '+351 91 000 00 02');
+insert into PAN values ('www.pan4.pt', '+351 91 000 00 03');
+
+insert into Device values (123456789, 'Philips', 'blood pressure');
+insert into Device values (123456790, 'Philips', 'scale');
+insert into Device values (123456791, 'Philips', 'insuline meter');
+insert into Device values (123456789, 'RPG', 'blood pressure');
+
+insert into Actuator values (123456789, 'Philips', 'blood pressure');
+insert into Actuator values (123456790, 'Philips', 'scale');
+insert into Actuator values (123456791, 'Philips', 'insuline meter');
+
+insert into Sensor values (123456789, 'RPG', 'blood pressure');
+
+
+insert into Period values ('2015-10-26', '2015-11-26');
+insert into Period values ('2015-4-26', '2015-10-26');
+insert into Period values ('2015-5-26', '2015-11-25');
+insert into Period values ('2014-12-25', '2015-01-01');
