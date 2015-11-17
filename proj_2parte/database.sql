@@ -58,7 +58,7 @@ create table Reading(
 	manuf varchar(255),
 	datetime timestamp,
 	value numeric(20,2),
-	primary key(snum, manuf),
+	primary key(snum, manuf, datetime),
 	foreign key(snum, manuf) references Sensor(snum, manuf));
 
 create table Setting(
@@ -66,7 +66,7 @@ create table Setting(
 	manuf varchar(255),
 	datetime timestamp,
 	value numeric(20,2),
-	primary key(snum, manuf),
+	primary key(snum, manuf, datetime),
 	foreign key(snum, manuf) references Actuator(snum, manuf));
 
 create table Wears(
