@@ -104,7 +104,7 @@ create table Connects(
 
 insert into Patient values ('001-54245-1555555', 'Bernardo Gomes', 'Rua Alves Redol');
 insert into Patient values ('001-54245-1555575', 'Diogo Martins', 'Avenida João Crisóstomo');
-insert into Patient values ('001-54745-1555555', 'Diogo Proença', 'Avenida Praia da Vitória');
+insert into Patient values ('001-54745-1555556', 'Diogo Proença', 'Avenida Praia da Vitória');
 insert into Patient values ('001-54245-1855555', 'Zé Manel', 'Avenida Duque de Ávila');
 
 insert into PAN values ('www.pan1.pt', '+351 91 000 00 00');
