@@ -116,6 +116,8 @@ insert into Device values (123456789, 'Philips', 'blood pressure');
 insert into Device values (123456790, 'Philips', 'insuline meter');
 insert into Device values (123456791, 'Philips', 'insuline meter');
 insert into Device values (123456789, 'RPG', 'blood pressure');
+insert into Device values (123456789, 'LG', 'scale');
+
 
 insert into Actuator values (123456790, 'Philips', 'scale');
 insert into Actuator values (123456791, 'Philips', 'insuline meter');
@@ -131,20 +133,36 @@ insert into Period values ('2014-12-25', '2015-01-01');
 insert into Period values ('2015-11-25', '2015-12-01');
 insert into Period values ('2015-11-27', '2016-01-01');
 insert into Period values ('2015-04-01', '2015-10-25');
+insert into Period values ('2012-10-10', '2013-10-10');
+insert into Period values ('2012-10-10', '2014-10-10');
+insert into Period values ('2014-10-09', '2015-12-01');
+insert into Period values ('2012-10-10', '2014-11-19');
+insert into Period values ('2011-10-09', '2012-12-01');
+
 
 insert into Connects values ('2015-04-01', '2015-10-25', 123456789, 'RPG', 'www.pan1.pt');
 insert into Connects values ('2015-10-26', '2015-11-26', 123456790, 'Philips', 'www.pan1.pt');
 insert into Connects values ('2015-10-26', '2015-11-26', 123456789, 'Philips', 'www.pan1.pt');
 insert into Connects values ('2015-11-27', '2016-01-01', 123456789, 'Philips', 'www.pan3.pt');
+insert into Connects values ('2015-10-26', '2015-11-26', 123456789, 'LG', 'www.pan1.pt');
+insert into Connects values ('2012-10-10', '2013-10-10', 123456789, 'LG', 'www.pan1.pt');
 
-insert into Wears values ('2014-12-25', '2015-01-01', '001-54245-1555555', 'www.pan1.pt');
-insert into Wears values ('2015-04-01', '2015-10-25', '001-54245-1555555', 'www.pan1.pt');
-insert into Wears values ('2015-10-26', '2015-11-26', '001-54245-1555555', 'www.pan1.pt');
+
+/*insert into Wears values ('2014-12-25', '2015-01-01', '001-54245-1555555', 'www.pan1.pt');*/
+/*insert into Wears values ('2015-04-01', '2015-10-25', '001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2015-10-26', '2015-11-26', '001-54245-1555555', 'www.pan1.pt');*/
 insert into Wears values ('2015-11-25', '2015-12-01', '001-54245-1555575', 'www.pan2.pt');
-
-
+insert into Wears values ('2014-10-09', '2015-12-01', '001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2011-10-09', '2012-12-01', '001-54245-1555555', 'www.pan1.pt');
 
 insert into Reading values (123456789, 'RPG', '2015-10-24 09:45:00', 45);
 insert into Reading values (123456789, 'Philips', '2015-01-24 09:45:00', 20);
 insert into Reading values (123456789, 'Philips', '2015-11-24 09:45:00', 21);
 insert into Reading values (123456790, 'Philips', '2015-11-24 09:45:00', 24);
+
+insert into Municipality values (2870, 'Montijo');
+insert into Municipality values (2890, 'Alcochete');
+insert into Municipality values (8125, 'Quarteira');
+
+insert into Lives values ('2012-10-10', '2014-11-19', '001-54245-1555555', 2870);
+
