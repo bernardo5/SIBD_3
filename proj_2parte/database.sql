@@ -113,21 +113,38 @@ insert into PAN values ('www.pan3.pt', '+351 91 000 00 02');
 insert into PAN values ('www.pan4.pt', '+351 91 000 00 03');
 
 insert into Device values (123456789, 'Philips', 'blood pressure');
-insert into Device values (123456790, 'Philips', 'scale');
+insert into Device values (123456790, 'Philips', 'insuline meter');
 insert into Device values (123456791, 'Philips', 'insuline meter');
 insert into Device values (123456789, 'RPG', 'blood pressure');
 
-insert into Actuator values (123456789, 'Philips', 'blood pressure');
 insert into Actuator values (123456790, 'Philips', 'scale');
 insert into Actuator values (123456791, 'Philips', 'insuline meter');
 
 insert into Sensor values (123456789, 'RPG', 'blood pressure');
-
+insert into Sensor values (123456789, 'Philips', 'blood pressure');
+insert into Sensor values (123456790, 'Philips', 'insuline');
 
 insert into Period values ('2015-10-26', '2015-11-26');
-insert into Period values ('2015-4-26', '2015-10-26');
-insert into Period values ('2015-5-26', '2015-11-25');
+insert into Period values ('2015-04-26', '2015-10-26');
+insert into Period values ('2015-05-26', '2015-11-25');
 insert into Period values ('2014-12-25', '2015-01-01');
+insert into Period values ('2015-11-25', '2015-12-01');
+insert into Period values ('2015-11-27', '2016-01-01');
+insert into Period values ('2015-04-01', '2015-10-25');
+
+insert into Connects values ('2015-04-01', '2015-10-25', 123456789, 'RPG', 'www.pan1.pt');
+insert into Connects values ('2015-10-26', '2015-11-26', 123456790, 'Philips', 'www.pan1.pt');
+insert into Connects values ('2015-10-26', '2015-11-26', 123456789, 'Philips', 'www.pan1.pt');
+insert into Connects values ('2015-11-27', '2016-01-01', 123456789, 'Philips', 'www.pan3.pt');
+
+insert into Wears values ('2014-12-25', '2015-01-01', '001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2015-04-01', '2015-10-25', '001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2015-10-26', '2015-11-26', '001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2015-11-25', '2015-12-01', '001-54245-1555575', 'www.pan2.pt');
 
 
 
+insert into Reading values (123456789, 'RPG', '2015-10-24 09:45:00', 45);
+insert into Reading values (123456789, 'Philips', '2015-01-24 09:45:00', 20);
+insert into Reading values (123456789, 'Philips', '2015-11-24 09:45:00', 21);
+insert into Reading values (123456790, 'Philips', '2015-11-24 09:45:00', 24);
