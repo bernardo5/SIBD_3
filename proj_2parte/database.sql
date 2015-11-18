@@ -138,7 +138,9 @@ insert into Period values ('2012-10-10', '2014-10-10');
 insert into Period values ('2014-10-09', '2015-12-01');
 insert into Period values ('2012-10-10', '2014-11-19');
 insert into Period values ('2011-10-09', '2012-12-01');
-
+insert into Period values ('2015-11-26', '2016-01-01');
+insert into Period values ('2015-11-28', '2016-01-01');
+insert into Period values ('2015-11-27', '2015-12-01');
 
 insert into Connects values ('2015-04-01', '2015-10-25', 123456789, 'RPG', 'www.pan1.pt');
 insert into Connects values ('2015-10-26', '2015-11-26', 123456790, 'Philips', 'www.pan1.pt');
