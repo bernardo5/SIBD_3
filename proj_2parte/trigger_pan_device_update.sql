@@ -8,14 +8,12 @@ create trigger check_overlap_time_period_Device_PAN_update before update on Conn
 for each row
 begin
 if(exists(SELECT start FROM Connects WHERE(
-		(new.start>new.end)OR(exists(SELECT start FROM Connects WHERE(
+		(((new.end<=Connects.end)AND(new.end>=Connects.start))
+		OR((new.start>=Connects.start)AND((new.start<=Connects.end))))
+		AND(new.snum=Connects.snum)AND(new.manuf=Connects.manuf) /*AND 
+		(old.start!=Connects.start AND old.end!=Connects.end AND old.snum!=Connects.snum AND old.manuf!=Connects.manuf)*/
 		
-		(((new.start<=Connects.end)AND(new.start>=Connects.start))
-		OR((new.end>=Connects.start)AND((Connects.end <=Connects.end)))
-		)
-		
-		AND(new.snum=Connects.snum)AND(new.manuf=Connects.manuf))))
-		)))
+		))) 
 
 then
 			
