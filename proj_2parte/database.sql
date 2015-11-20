@@ -168,3 +168,5 @@ insert into Municipality values (8125, 'Quarteira');
 
 insert into Lives values ('2012-10-10', '2014-11-19', '001-54245-1555555', 2870);
 
+insert into Setting values (123456790, 'Philips', '2015-11-24 09:45:00', 24);
+
