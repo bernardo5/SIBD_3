@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 	<body>
 		<h3>Patient name successfully received!</h3>
@@ -5,6 +6,7 @@
 		
 <?php
 		$patient_nam=$_REQUEST['patient_name'];
+		$_SESSION['patient_name'] = $patient_nam;
 		$host = "db.ist.utl.pt";
 		$user = "ist175573";
 		$pass = "swex6595";
@@ -133,11 +135,13 @@
 		
 		$connection = null;
 ?>
-		
-		
+
+		<p><a href="transfer_session2.php">Keep visualizing resultes </a></p>
 		<p></p>
-		<a href="http://web.ist.utl.pt/ist175573/Transfer_device.html">Go back</a>
 		<p></p>
-		<p><a href="http://web.ist.utl.pt/ist175573/index__.html">Back to main menu</a></p>
+		<p></p>
+		<a href="Transfer_device.html">Go back</a>
+		<p></p>
+		<p><a href="index__.html">Back to main menu</a></p>
 	</body>
 </html>

@@ -167,8 +167,8 @@
 		
 ?>
 	<p></p>
-	<a href="http://web.ist.utl.pt/ist175573/Readings_Settings.html">Go back</a>
+	<a href="Readings_Settings.html">Go back</a>
 	<p></p>
-	<p><a href="http://web.ist.utl.pt/ist175573/index__.html">Back to main menu</a></p>
+	<p><a href="index__.html">Back to main menu</a></p>
 	</body>
 </html>
