@@ -1,0 +1,7 @@
+veriicar se a nova PAN esta ligada a outro paciente agora->nao e possivel transferir devices
+
+verificar se o device que tou a trocar ta ligado actualmente a PAN antiga
+
+Se o pacient tiver pan actual nice->senao abortar
+
+ 
