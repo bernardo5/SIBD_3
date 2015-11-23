@@ -7,16 +7,16 @@ create trigger check_overlap_time_period_Device_PAN_update before update on Conn
 
 for each row
 begin
-if(exists(SELECT start FROM Connects WHERE(
-		(((new.end<=Connects.end)AND(new.end>=Connects.start))
-		OR((new.start>=Connects.start)AND((new.start<=Connects.end))))
-		AND(new.snum=Connects.snum)AND(new.manuf=Connects.manuf) /*AND 
-		(old.start!=Connects.start AND old.end!=Connects.end AND old.snum!=Connects.snum AND old.manuf!=Connects.manuf)*/
-		
-		))) 
-
-then
-			
+if(
+	exists(SELECT start, end FROM Connects
+		WHERE(
+			(Connects.start <= new.end) and  (Connects.end >= new.start) 	/*Condição de Sobreposição*/ 
+			and ((new.snum = Connects.snum) and (new.manuf = Connects.manuf))
+			and (new.pan != Connects.pan)
+		)
+	)
+)
+	then	
 	call overlaping_time_periods_for_Device_PAN();
 
 end if;
@@ -24,4 +24,3 @@ end if;
 end$$
 
 delimiter ;
-

@@ -51,7 +51,7 @@ create table Municipality(
 create table Period(
 	start date,
 	end date,
-	check(start<=end),
+	check(start < end),
 	primary key(start, end));
 
 create table Reading(
@@ -75,7 +75,7 @@ create table Wears(
 	end date,
 	patient varchar(255),
 	pan varchar(255),
-	check(start<=end),
+	check(start < end),
 	primary key(start, end),
 	foreign key(start, end) references Period(start, end),
 	foreign key(patient) references Patient(number),
@@ -86,7 +86,7 @@ create table Lives(
 	end date,
 	patient varchar(255),
 	muni integer,
-	check(start<=end),
+	check(start < end),
 	primary key(start, end, patient),
 	foreign key(start, end) references Period(start, end),
 	foreign key(patient) references Patient(number),
@@ -98,7 +98,7 @@ create table Connects(
 	snum integer,
 	manuf varchar(255),
 	pan varchar(255),
-	check(start<=end),
+	check(start < end),
 	primary key(start, end, snum, manuf),
 	foreign key(start, end) references Period(start, end),
 	foreign key(snum, manuf) references Device(serialnum, manufacturer),
@@ -145,15 +145,15 @@ insert into Period values ('2011-10-09', '2012-12-01');
 insert into Period values ('2015-11-26', '2016-01-01');
 insert into Period values ('2015-11-28', '2016-01-01');
 insert into Period values ('2015-11-27', '2015-12-01');
-insert into Period values ('2016-02-03', '2016-02-04');
+insert into Period values ('2013-10-10', '2014-10-10');
 
 insert into Connects values ('2015-04-01', '2015-10-25', 123456789, 'RPG', 'www.pan1.pt');
+insert into Connects values ('2013-10-10', '2014-10-10', 123456789, 'Philips', 'www.pan1.pt');
 insert into Connects values ('2015-10-26', '2015-11-26', 123456790, 'Philips', 'www.pan1.pt');
 insert into Connects values ('2015-10-26', '2015-11-26', 123456789, 'Philips', 'www.pan1.pt');
 insert into Connects values ('2015-11-27', '2016-01-01', 123456789, 'Philips', 'www.pan3.pt');
 insert into Connects values ('2015-10-26', '2015-11-26', 123456789, 'LG', 'www.pan1.pt');
 insert into Connects values ('2012-10-10', '2013-10-10', 123456789, 'LG', 'www.pan1.pt');
-insert into Connects values ('2016-02-03', '2016-02-04', 123456789, 'Philips', 'www.pan1.pt');
 
 
 /*insert into Wears values ('2014-12-25', '2015-01-01', '001-54245-1555555', 'www.pan1.pt');*/

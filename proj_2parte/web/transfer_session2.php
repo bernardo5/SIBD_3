@@ -3,6 +3,7 @@
 <html>
 	<body>
 		<h3>Devices connected to the actual pan:<br/></h3>
+			<form action='transfer_session3.php' method="post">
 		<?php
 		$patient_nam=$_SESSION['patient_name'];
 		$host = "db.ist.utl.pt";
@@ -71,7 +72,7 @@
 						W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.name like '%$patient_nam%'
 						AND W.patient=P.number AND W.end<current_date AND W.end!='2999-12-31')
 						AND W.end<current_date AND 	W.end!='2999-12-31'
-						 AND W.pan=C.pan AND (W.end<=C.end)
+						 AND W.pan=C.pan AND (C.start<=W.end AND W.end<=C.end)
 				";
 		$result = $connection->query($sql);
 		
@@ -82,10 +83,8 @@
 			exit();
 		}
 		
-		echo("Actual:<br/>");
-		
 		echo("<table border=\"1\">");
-		echo("<tr><td>number</td><td>name</td><td>pan</td><td>device serial number</td><td>device manufacturer</td></tr>");
+		echo("<tr><td>number</td><td>name</td><td>pan</td><td>device serial number</td><td>device manufacturer</td><td>inserir?</td></tr>");
 		foreach($result as $row)
 		{
 			echo("<tr><td>");
@@ -98,20 +97,27 @@
 			echo($row['snum']);
 			echo("</td><td>");
 			echo($row['manuf']);
+			echo("</td><td>");
+			$device=$row['snum'];
+			$device.=' ';
+			$device.=$row['manuf'];
+			echo("<input type=\"checkbox\" name=\"Device[]\" value=\"$device\" />");
 			echo("</td></tr>");
 		}
 		echo("</table>");
 		
-		
-		
 		$connection = null;
 ?>
 
+
+
+		<p><input type="submit" value="Submit"/></p>
 		<p></p>
 		<p></p>
 		<p></p>
 		<a href="transfer.php">Go back</a>
 		<p></p>
 		<p><a href="index__.html">Back to main menu</a></p>
+		</form>
 	</body>
 </html>
