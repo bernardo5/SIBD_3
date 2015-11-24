@@ -82,6 +82,37 @@
 			echo("<p>Error: {$info[2]}</p>");
 			exit();
 		}
+		/******************Verify if previous pan is in use****************************/
+		$sql = "SELECT * FROM Wears WHERE end='2999-12-31' 
+										AND pan in(SELECT W.pan FROM Patient as P, Wears as W, Connects as C WHERE
+													P.name like '%$patient_nam%'
+													AND W.patient=P.number AND
+													W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.name like '%$patient_nam%'
+													AND W.patient=P.number AND W.end<current_date AND W.end!='2999-12-31')
+													AND W.end<current_date AND 	W.end!='2999-12-31'
+													AND W.pan=C.pan AND (C.start<=W.end AND W.end<=C.end))
+										AND patient not in (SELECT P.number FROM Patient as P, Wears as W, Connects as C WHERE
+													P.name like '%$patient_nam%'
+													AND W.patient=P.number AND
+													W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.name like '%$patient_nam%'
+													AND W.patient=P.number AND W.end<current_date AND W.end!='2999-12-31')
+													AND W.end<current_date AND 	W.end!='2999-12-31'
+													AND W.pan=C.pan AND (C.start<=W.end AND W.end<=C.end))
+				";
+		
+		$result_verify = $connection->query($sql);
+							
+		if ($result_verify == FALSE)
+		{
+			$info = $connection->errorInfo();
+			echo("<p>Error: {$info[2]}</p>");
+			exit();
+		}
+		/***********************/
+		$nrows= $result_verify->rowCount();		
+		/******************************************************************************/
+	
+	
 		
 		echo("<table border=\"1\">");
 		echo("<tr><td>number</td><td>name</td><td>pan</td><td>device serial number</td><td>device manufacturer</td><td>inserir?</td></tr>");
@@ -101,7 +132,7 @@
 			$device=$row['snum'];
 			$device.=' ';
 			$device.=$row['manuf'];
-			if($row['end']=='2999-12-31')
+			if(($row['end']=='2999-12-31')&&($nrows==0))
 			{
 				echo("<input type=\"checkbox\" name=\"Device[]\" value=\"$device\" />");
 			}
