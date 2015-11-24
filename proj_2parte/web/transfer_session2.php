@@ -6,6 +6,7 @@
 			<form action='transfer_session3.php' method="post">
 		<?php
 		$patient_nam=$_SESSION['patient_name'];
+		$p_number=$_SESSION['patient_number'];
 		$host = "db.ist.utl.pt";
 		$user = "ist175573";
 		$pass = "swex6595";
@@ -23,7 +24,7 @@
 		}
 		
 		$sql = "SELECT P.number, P.name, W.pan, C.snum, C.manuf FROM Patient as P, Wears as W, Connects as C WHERE
-				P.name like '%$patient_nam%' AND W.patient=P.number
+				P.number='$p_number' AND W.patient=P.number
 			    AND current_date<=W.end AND current_date>=W.start
 			    AND W.pan=C.pan AND current_date<=C.end AND current_date>=C.start
 				";
@@ -67,9 +68,9 @@
 		
 		
 		$sql = "SELECT P.number, P.name, W.pan, C.snum, C.manuf, C.end FROM Patient as P, Wears as W, Connects as C WHERE
-						P.name like '%$patient_nam%'
+						P.number='$p_number'
 						AND W.patient=P.number AND
-						W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.name like '%$patient_nam%'
+						W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.number='$p_number'
 						AND W.patient=P.number AND W.end<current_date AND W.end!='2999-12-31')
 						AND W.end<current_date AND 	W.end!='2999-12-31'
 						 AND W.pan=C.pan AND (C.start<=W.end AND W.end<=C.end)
@@ -85,16 +86,16 @@
 		/******************Verify if previous pan is in use****************************/
 		$sql = "SELECT * FROM Wears WHERE end='2999-12-31' 
 										AND pan in(SELECT W.pan FROM Patient as P, Wears as W, Connects as C WHERE
-													P.name like '%$patient_nam%'
+													P.number='$p_number'
 													AND W.patient=P.number AND
-													W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.name like '%$patient_nam%'
+													W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.number='$p_number'
 													AND W.patient=P.number AND W.end<current_date AND W.end!='2999-12-31')
 													AND W.end<current_date AND 	W.end!='2999-12-31'
 													AND W.pan=C.pan AND (C.start<=W.end AND W.end<=C.end))
 										AND patient not in (SELECT P.number FROM Patient as P, Wears as W, Connects as C WHERE
-													P.name like '%$patient_nam%'
+													P.number='$p_number'
 													AND W.patient=P.number AND
-													W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.name like '%$patient_nam%'
+													W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.number='$p_number'
 													AND W.patient=P.number AND W.end<current_date AND W.end!='2999-12-31')
 													AND W.end<current_date AND 	W.end!='2999-12-31'
 													AND W.pan=C.pan AND (C.start<=W.end AND W.end<=C.end))
@@ -151,7 +152,7 @@
 		<p></p>
 		<a href="transfer.php">Go back</a>
 		<p></p>
-		<p><a href="index__.html">Back to main menu</a></p>
+		<p><a href="index__.php">Back to main menu</a></p>
 		</form>
 	</body>
 </html>

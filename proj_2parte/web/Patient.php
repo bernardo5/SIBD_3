@@ -5,6 +5,9 @@
 		<p>Patient info:</p>
 <?php
 		$patient_nam=$_REQUEST['patient_name'];
+		list($p_number, $p_name) = explode(" ", $patient_nam);
+		$_SESSION['patient_name'] = $p_name;
+		$_SESSION['patient_number']=$p_number;
 		$host = "db.ist.utl.pt";
 		$user = "ist175573";
 		$pass = "swex6595";
@@ -21,7 +24,7 @@
 			exit();
 		}
 		
-		$sql = "SELECT number,name, address FROM Patient WHERE name like '%$patient_nam%'";
+		$sql = "SELECT number,name, address FROM Patient WHERE number='$p_number'";
 		$result = $connection->query($sql);
 		
 		if ($result == FALSE)
@@ -74,7 +77,7 @@
 					AND
 					((R.snum=S.snum AND R.manuf= S.manuf))
 					AND
-					(C.pan= W.pan) AND (W.patient IN (SELECT number FROM Patient WHERE name like '%$patient_nam%'))
+					(C.pan= W.pan) AND (W.patient='$p_number')
 				)";
 		$result = $connection->query($sql);
 		
@@ -131,7 +134,7 @@
 					AND
 					((S.snum=A.snum AND S.manuf= A.manuf))
 					AND
-					(C.pan= W.pan) AND (W.patient IN (SELECT number FROM Patient WHERE name like '%$patient_nam%'))
+					(C.pan= W.pan) AND (W.patient ='$p_number')
 				)";
 		$result = $connection->query($sql);
 		
@@ -167,8 +170,8 @@
 		
 ?>
 	<p></p>
-	<a href="Readings_Settings.html">Go back</a>
+	<a href="Patient_intermidiate.php">Go back</a>
 	<p></p>
-	<p><a href="index__.html">Back to main menu</a></p>
+	<p><a href="index__.php">Back to main menu</a></p>
 	</body>
 </html>

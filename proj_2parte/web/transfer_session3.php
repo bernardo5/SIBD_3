@@ -7,6 +7,7 @@
 		$prev=$_SESSION['previous_pan'];
 		$new=$_SESSION['current_pan'];
 		$patient_nam=$_SESSION['patient_name'];
+		$p_number=$_SESSION['patient_number'];
 		$host = "db.ist.utl.pt";
 		$user = "ist175573";
 		$pass = "swex6595";
@@ -47,7 +48,6 @@
 						$nrows= $result->rowCount();
 						if($nrows==0) /*the data is not in the Period table*/
 						{
-							echo('entered');
 							$sql = "insert into Period values (current_date, '2999-12-31')";
 							$result = $connection->query($sql);
 								
@@ -65,16 +65,16 @@
 						/*gets the begin date of connection of the transfered device*/
 						$sql = "SELECT start from Connects WHERE
 									snum IN (SELECT C.snum FROM Patient as P, Wears as W, Connects as C WHERE
-											P.name like '%$patient_nam%'
+											P.number='$p_number'
 											AND W.patient=P.number AND
-											W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.name like '%$patient_nam%'
+											W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.number='$p_number'
 											AND W.patient=P.number AND W.end<current_date AND W.end!='2999-12-31')
 											AND W.end<current_date AND 	W.end!='2999-12-31'
 											 AND W.pan=C.pan AND (C.start<=W.end AND W.end<=C.end))
 									AND manuf IN(SELECT C.manuf FROM Patient as P, Wears as W, Connects as C WHERE
-											P.name like '%$patient_nam%'
+											P.number='$p_number'
 											AND W.patient=P.number AND
-											W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.name like '%$patient_nam%'
+											W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.number='$p_number'
 											AND W.patient=P.number AND W.end<current_date AND W.end!='2999-12-31')
 											AND W.end<current_date AND 	W.end!='2999-12-31'
 											 AND W.pan=C.pan AND (C.start<=W.end AND W.end<=C.end))";
@@ -107,7 +107,6 @@
 							$nrows= $result->rowCount();
 							if($nrows==0) /*the data is not in the Period table*/
 							{
-								echo('entered');
 								$sql = "insert into Period values ('$start', current_date)";
 								$result = $connection->query($sql);
 									
@@ -158,6 +157,6 @@
 		<p></p>
 		<a href="transfer_session2.php">Go back</a>
 		<p></p>
-		<p><a href="index__.html">Back to main menu</a></p>
+		<p><a href="index__.php">Back to main menu</a></p>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-veriicar se a nova PAN esta ligada a outro paciente agora->nao e possivel transferir devices
+veriicar se a nova PAN esta ligada a outro paciente agora->nao e possivel transferir devices [X]
 
 verificar se o device que tou a trocar ta ligado actualmente a PAN antiga [X]
 
