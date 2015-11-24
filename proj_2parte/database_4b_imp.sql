@@ -150,19 +150,24 @@ insert into Period values ('2016-02-03', '2016-02-04');
 insert into Period values ('2012-10-10', '2999-12-31');
 insert into Period values ('2011-02-03', '2999-12-31');
 
+insert into Period values ('2012-12-01', '2999-12-31');
+
 
 insert into Connects values ('2015-04-01', '2015-10-25', 123456789, 'RPG', 'www.pan1.pt');
 insert into Connects values ('2015-10-26', '2015-11-26', 123456790, 'Philips', 'www.pan1.pt');
 insert into Connects values ('2015-10-26', '2015-11-26', 123456789, 'Philips', 'www.pan1.pt');
 insert into Connects values ('2015-11-27', '2016-01-01', 123456789, 'Philips', 'www.pan3.pt');
-insert into Connects values ('2012-10-10', '2999-12-31', 123456789, 'LG', 'www.pan1.pt');/*aqui*/
+insert into Connects values ('2012-10-10', '2999-12-31', 123456789, 'LG', 'www.pan1.pt');
 insert into Connects values ('2016-02-03', '2016-02-04', 123456789, 'Philips', 'www.pan1.pt');
 insert into Connects values ('2011-02-03', '2999-12-31', 123456789, 'Philips', 'www.pan1.pt');
 
 
 insert into Wears values ('2015-11-25', '2015-12-01', '001-54245-1555575', 'www.pan2.pt');
-insert into Wears values ('2014-10-09', '2015-12-01', '001-54245-1555555', 'www.pan3.pt'); /*aqui*/
+insert into Wears values ('2014-10-09', '2015-12-01', '001-54245-1555555', 'www.pan3.pt'); 
 insert into Wears values ('2011-10-09', '2012-12-01', '001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2012-12-01', '2999-12-31', '001-54245-1555575', 'www.pan1.pt');/*aqui*/
+
+
 
 insert into Reading values (123456789, 'RPG', '2015-10-24 09:45:00', 45);
 insert into Reading values (123456789, 'Philips', '2015-01-24 09:45:00', 20);
