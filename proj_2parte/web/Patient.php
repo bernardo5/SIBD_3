@@ -1,7 +1,7 @@
 <html>
 	<body>
 		<h3>Patient name successfully received!</h3>
-		<p>Patient name given: <?php echo($_REQUEST['patient_name']); ?></p>
+		<p>Patient info given: <?php echo($_REQUEST['patient_name']); ?></p>
 		<p>Patient info:</p>
 <?php
 		$patient_nam=$_REQUEST['patient_name'];
@@ -88,27 +88,32 @@
 			exit();
 		}
 		
-		echo("<table border=\"1\">");
-		echo("<tr><td>Patient</td><td> device serial number</td><td> device manufacturer</td><td>time</td><td>value</td><td>units</td></tr>");
-		foreach($result as $row)
-		{
-			echo("<tr><td>");
-			echo($row['patient']);
-			echo("</td><td>");
-			echo($row['snum']);
-			echo("</td><td>");
-			echo($row['manuf']);
-			echo("</td><td>");
-			echo($row['datetime']);
-			echo("</td><td>");
-			echo($row['value']);
-			echo("</td><td>");
-			echo($row['units']);
-			echo("</td></tr>");
+		$nrows= $result->rowCount();
+		if($nrows!=0){
+			echo("<table border=\"1\">");
+			echo("<tr><td>Patient</td><td> device serial number</td><td> device manufacturer</td><td>time</td><td>value</td><td>units</td></tr>");
+			foreach($result as $row)
+			{
+				echo("<tr><td>");
+				echo($row['patient']);
+				echo("</td><td>");
+				echo($row['snum']);
+				echo("</td><td>");
+				echo($row['manuf']);
+				echo("</td><td>");
+				echo($row['datetime']);
+				echo("</td><td>");
+				echo($row['value']);
+				echo("</td><td>");
+				echo($row['units']);
+				echo("</td></tr>");
+			}
+			echo("</table>");
+			
+		}else{
+			echo("<p>Patient has no readings :(</p>");
 		}
-		echo("</table>");
 		$connection = null;
-		
 		
 		
 		echo("	<p>Patient Settings:</p>");
@@ -145,25 +150,32 @@
 			exit();
 		}
 		
-		echo("<table border=\"1\">");
-		echo("<tr><td>Patient</td><td> device serial number</td><td> device manufacturer</td><td>time</td><td>value</td><td>units</td></tr>");
-		foreach($result as $row)
-		{
-			echo("<tr><td>");
-			echo($row['patient']);
-			echo("</td><td>");
-			echo($row['snum']);
-			echo("</td><td>");
-			echo($row['manuf']);
-			echo("</td><td>");
-			echo($row['datetime']);
-			echo("</td><td>");
-			echo($row['value']);
-			echo("</td><td>");
-			echo($row['units']);
-			echo("</td></tr>");
+		
+		$nrows= $result->rowCount();
+		if($nrows!=0){
+			
+			echo("<table border=\"1\">");
+			echo("<tr><td>Patient</td><td> device serial number</td><td> device manufacturer</td><td>time</td><td>value</td><td>units</td></tr>");
+			foreach($result as $row)
+			{
+				echo("<tr><td>");
+				echo($row['patient']);
+				echo("</td><td>");
+				echo($row['snum']);
+				echo("</td><td>");
+				echo($row['manuf']);
+				echo("</td><td>");
+				echo($row['datetime']);
+				echo("</td><td>");
+				echo($row['value']);
+				echo("</td><td>");
+				echo($row['units']);
+				echo("</td></tr>");
+			}
+			echo("</table>");
+		}else{
+			echo("<p>Patient has no Settings :(</p>");
 		}
-		echo("</table>");
 		$connection = null;
 		
 		

@@ -39,23 +39,28 @@
 		
 		echo("Actual:<br/>");
 		
-		echo("<table border=\"1\">");
-		echo("<tr><td>number</td><td>name</td><td>pan</td><td>device serial number</td><td>device manufacturer</td></tr>");
-		foreach($result as $row)
-		{
-			echo("<tr><td>");
-			echo($row['number']);
-			echo("</td><td>");
-			echo($row['name']);
-			echo("</td><td>");
-			echo($row['pan']);
-			echo("</td><td>");
-			echo($row['snum']);
-			echo("</td><td>");
-			echo($row['manuf']);
-			echo("</td></tr>");
+		$nrows= $result->rowCount();
+		if($nrows!=0){		
+			echo("<table border=\"1\">");
+			echo("<tr><td>number</td><td>name</td><td>pan</td><td>device serial number</td><td>device manufacturer</td></tr>");
+			foreach($result as $row)
+			{
+				echo("<tr><td>");
+				echo($row['number']);
+				echo("</td><td>");
+				echo($row['name']);
+				echo("</td><td>");
+				echo($row['pan']);
+				echo("</td><td>");
+				echo($row['snum']);
+				echo("</td><td>");
+				echo($row['manuf']);
+				echo("</td></tr>");
+			}
+			echo("</table>");
+		}else{
+			echo("<p>Actual PAN has no devices attached</p>");
 		}
-		echo("</table>");
 		
 		
 		
@@ -150,7 +155,6 @@
 		<p></p>
 		<p></p>
 		<p></p>
-		<a href="transfer.php">Go back</a>
 		<p></p>
 		<p><a href="index__.php">Back to main menu</a></p>
 		</form>

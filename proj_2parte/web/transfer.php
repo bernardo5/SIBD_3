@@ -36,26 +36,31 @@
 			exit();
 		}
 		
-		echo("Patient PAN's:<br/>");
 		
-		echo("<table border=\"1\">");
-		echo("<tr><td>number</td><td>name</td><td>pan</td><td>start</td><td>end</td></tr>");
-		foreach($result as $row)
-		{
-			echo("<tr><td>");
-			echo($row['number']);
-			echo("</td><td>");
-			echo($row['name']);
-			echo("</td><td>");
-			echo($row['pan']);
-			echo("</td><td>");
-			echo($row['start']);
-			echo("</td><td>");
-			echo($row['end']);
-			echo("</td></tr>");
+		$nrows= $result->rowCount();
+		if($nrows!=0){
+			echo("Patient PAN's:<br/>");
+			
+			echo("<table border=\"1\">");
+			echo("<tr><td>number</td><td>name</td><td>pan</td><td>start</td><td>end</td></tr>");
+			foreach($result as $row)
+			{
+				echo("<tr><td>");
+				echo($row['number']);
+				echo("</td><td>");
+				echo($row['name']);
+				echo("</td><td>");
+				echo($row['pan']);
+				echo("</td><td>");
+				echo($row['start']);
+				echo("</td><td>");
+				echo($row['end']);
+				echo("</td></tr>");
+			}
+			echo("</table>");
+		}else{
+			echo("Patient was never connected to a PAN :)");
 		}
-		echo("</table>");
-		
 		
 		
 		echo("<p></p> <p></p>");
@@ -125,25 +130,32 @@
 				exit();
 			}
 			
-			echo("<table border=\"1\">");
-			echo("<tr><td>number</td><td>name</td><td>pan</td><td>start</td><td>end</td></tr>");
-			foreach($result as $row)
-			{
-				echo("<tr><td>");
-				echo($row['number']);
-				echo("</td><td>");
-				echo($row['name']);
-				echo("</td><td>");
-				echo($row['pan']);
-				$_SESSION['previous_pan']=$row['pan'];
-				echo("</td><td>");
-				echo($row['start']);
-				echo("</td><td>");
-				echo($row['end']);
-				echo("</td></tr>");
-			}
-			echo("</table>");
 			
+			
+			$nrows= $result->rowCount();
+			if($nrows!=0){
+				echo("<table border=\"1\">");
+				echo("<tr><td>number</td><td>name</td><td>pan</td><td>start</td><td>end</td></tr>");
+				foreach($result as $row)
+				{
+					echo("<tr><td>");
+					echo($row['number']);
+					echo("</td><td>");
+					echo($row['name']);
+					echo("</td><td>");
+					echo($row['pan']);
+					$_SESSION['previous_pan']=$row['pan'];
+					echo("</td><td>");
+					echo($row['start']);
+					echo("</td><td>");
+					echo($row['end']);
+					echo("</td></tr>");
+				}
+				echo("</table>");
+			
+			}else{
+				echo("<p>No Previous PAN's</p>");
+			}
 			$connection = null;
 			
 		if($nrows!=0)
@@ -154,7 +166,7 @@
 		<p></p>
 		<p></p>
 		<p></p>
-		<a href="Transfer_intermidiate.php">Go back</a>
+		<a href="transfer_intermediate.php">Go back</a>
 		<p></p>
 		<p><a href="index__.php">Back to main menu</a></p>
 	</body>
