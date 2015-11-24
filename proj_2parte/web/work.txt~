@@ -2,7 +2,7 @@ veriicar se a nova PAN esta ligada a outro paciente agora->nao e possivel transf
 
 verificar se o device que tou a trocar ta ligado actualmente a PAN antiga [X]
 
-Se o pacient tiver pan actual nice->senao abortar[X]->permite avancar pelos menus mas nao da p transferir nda
+Se o pacient tiver pan actual nice->senao abortar
 
 
 ao inserir verificar se ja existem os periodos[X]

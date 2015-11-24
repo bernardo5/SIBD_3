@@ -32,7 +32,9 @@
 						list($snum, $manuf) = explode(" ", $Dev);
 						echo("<p> serial number:$snum, Manufacturer:$manuf</p>");
 						/*insert into Period the new time period referenced to the new connection*/
-						$sql = "insert into Period values (current_date, '2999-12-31')";
+						
+						/**************************************************************/
+						$sql = "SELECT start, end from Period WHERE start=current_date AND end='2999-12-31'";
 						$result = $connection->query($sql);
 						
 						if ($result == FALSE)
@@ -41,6 +43,23 @@
 							echo("<p>Error: {$info[2]}</p>");
 							exit();
 						}
+						/****************************************************************/
+						$nrows= $result->rowCount();
+						if($nrows==0) /*the data is not in the Period table*/
+						{
+							echo('entered');
+							$sql = "insert into Period values (current_date, '2999-12-31')";
+							$result = $connection->query($sql);
+								
+							if ($result == FALSE)
+							{
+								$info = $connection->errorInfo();
+								echo("<p>Error: {$info[2]}</p>");
+								exit();
+							}
+							
+						}
+						
 						/***********************************************/
 						
 						/*gets the begin date of connection of the transfered device*/
@@ -72,7 +91,10 @@
 						{
 							/*updating Connection with previous pan*/
 							$start=$row['start'];
-							$sql = "insert into Period values ('$start', current_date)";
+							
+							
+							/**************************************************************************/
+							$sql = "SELECT start, end from Period WHERE start='$start' AND end=current_date";
 							$result = $connection->query($sql);
 							
 							if ($result == FALSE)
@@ -81,6 +103,23 @@
 								echo("<p>Error: {$info[2]}</p>");
 								exit();
 							}
+							/***********************/
+							$nrows= $result->rowCount();
+							if($nrows==0) /*the data is not in the Period table*/
+							{
+								echo('entered');
+								$sql = "insert into Period values ('$start', current_date)";
+								$result = $connection->query($sql);
+									
+								if ($result == FALSE)
+								{
+									$info = $connection->errorInfo();
+									echo("<p>Error: {$info[2]}</p>");
+									exit();
+								}
+								
+							}							
+							/******************************************************************************/
 							
 							$sql = "update Connects set end=current_date where start='$start' AND snum='$snum' AND
 									manuf='$manuf' AND end='2999-12-31' AND pan='$prev'";
@@ -92,7 +131,6 @@
 								echo("<p>Error: {$info[2]}</p>");
 								exit();
 							}
-							/******************************************/
 							
 						}
 						/**********************************************/
@@ -112,7 +150,7 @@
 				}
 			}
 			
-			
+			$connection = null;
 			
 		?>
 		<p></p>

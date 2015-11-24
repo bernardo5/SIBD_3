@@ -66,7 +66,7 @@
 		
 		
 		
-		$sql = "SELECT P.number, P.name, W.pan, C.snum, C.manuf FROM Patient as P, Wears as W, Connects as C WHERE
+		$sql = "SELECT P.number, P.name, W.pan, C.snum, C.manuf, C.end FROM Patient as P, Wears as W, Connects as C WHERE
 						P.name like '%$patient_nam%'
 						AND W.patient=P.number AND
 						W.end>=all(SELECT W.end FROM Patient as P, Wears as W WHERE P.name like '%$patient_nam%'
@@ -101,7 +101,10 @@
 			$device=$row['snum'];
 			$device.=' ';
 			$device.=$row['manuf'];
-			echo("<input type=\"checkbox\" name=\"Device[]\" value=\"$device\" />");
+			if($row['end']=='2999-12-31')
+			{
+				echo("<input type=\"checkbox\" name=\"Device[]\" value=\"$device\" />");
+			}
 			echo("</td></tr>");
 		}
 		echo("</table>");
