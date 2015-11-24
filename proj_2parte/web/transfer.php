@@ -83,6 +83,7 @@
 			echo($row['name']);
 			echo("</td><td>");
 			echo($row['pan']);
+			$_SESSION['current_pan']=$row['pan'];
 			echo("</td><td>");
 			echo($row['start']);
 			echo("</td><td>");
@@ -125,6 +126,7 @@
 			echo($row['name']);
 			echo("</td><td>");
 			echo($row['pan']);
+			$_SESSION['previous_pan']=$row['pan'];
 			echo("</td><td>");
 			echo($row['start']);
 			echo("</td><td>");
