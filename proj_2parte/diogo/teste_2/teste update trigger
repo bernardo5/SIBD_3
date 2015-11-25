@@ -1,0 +1,28 @@
+1. Diminuir new.end sem overlap[]
+update Wears set start = '2015-11-27', end = '2015-12-31' where end = '2016-01-01';
+
+2. Aumentar new.end sem overlap e com overlap []
+update Wears set start = '2015-11-27', end = '2016-01-02' where end = '2016-01-01';
+update Wears set start = '2013-10-10', end = '2016-01-01' where end = '2014-10-10';
+
+3. Diminuir new.start sem overlap e com overlap []
+update Wears set start = '2013-10-09', end = '2014-10-10' where end = '2014-10-10';
+update Wears set start = '2015-11-25', end = '2016-01-01' where end = '2016-01-01';
+
+4. Aumentar new.start sem overlap []
+update Wears set start = '2015-11-28', end = '2016-01-01' where end = '2016-01-01';
+
+5. Diminuir new.end e diminuir new.start sem overlap e com overlap []
+update Wears set start = '2013-10-09', end = '2014-10-09' where end = '2014-10-10';
+update Wears set start = '2013-10-09', end = '2014-10-09' where end = '2016-01-01';
+
+6. Diminuir new.end e aumentar new.start sem overlap []
+update Wears set start = '2013-10-11', end = '2014-10-09' where end = '2014-10-10';
+
+7. Aumentar new.end e diminuir new.start sem overlap e com overlap []
+update Wears set start = '2013-10-09', end = '2014-10-11' where end = '2014-10-10';
+update Wears set start = '2013-10-09', end = '2015-12-31' where end = '2014-10-10';
+
+8. Aumentar new.end e aumentar new.start sem overlap e com overlap []
+update Wears set start = '2013-10-11', end = '2014-10-11' where end = '2014-10-10';
+update Wears set start = '2015-11-27', end = '2015-12-31' where end = '2014-10-10';

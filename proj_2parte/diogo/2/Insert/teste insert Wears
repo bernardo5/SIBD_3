@@ -1,0 +1,29 @@
+1. Diminuir new.end sem overlap [X]
+insert into Wears values ('2013-11-25', '2013-11-28', '001-54245-1555575', 'www.pan1.pt');
+
+2. Aumentar new.end sem overlap e com overlap [X]
+insert into Wears values ('2013-11-25', '2013-12-02', '001-54245-1555575', 'www.pan1.pt');
+insert into Wears values ('2013-11-25', '2015-12-02', '001-54245-1555575', 'www.pan1.pt');
+
+3. Diminuir new.start sem overlap e com overlap [X]
+insert into Wears values ('2013-10-25', '2013-12-01', '001-54245-1555575', 'www.pan1.pt');
+insert into Wears values ('2012-10-25', '2013-12-01', '001-54245-1555575', 'www.pan1.pt');
+
+4. Aumentar new.start sem overlap [X]
+insert into Wears values ('2013-11-26', '2013-12-01', '001-54245-1555575', 'www.pan1.pt');
+
+5. Diminuir new.end e diminuir new.start sem overlap e com overlap [X]
+insert into Wears values ('2013-11-24', '2013-11-20', '001-54245-1555575', 'www.pan1.pt');
+insert into Wears values ('2011-11-24', '2013-11-20', '001-54245-1555575', 'www.pan1.pt');
+
+6. Diminuir new.end e aumentar new.start sem overlap [X]
+insert into Wears values ('2013-11-26', '2013-11-30', '001-54245-1555575', 'www.pan1.pt');
+
+7. Aumentar new.end e diminuir new.start sem overlap e com overlap [X]
+insert into Wears values ('2013-11-24', '2013-12-02', '001-54245-1555575', 'www.pan1.pt');
+insert into Wears values ('2011-11-24', '2015-12-02', '001-54245-1555575', 'www.pan1.pt');
+
+8. Aumentar new.end e aumentar new.start sem overlap e com overlap [X]
+insert into Wears values ('2013-11-26', '2013-12-02', '001-54245-1555575', 'www.pan1.pt');
+insert into Wears values ('2013-11-26', '2015-12-02', '001-54245-1555575', 'www.pan1.pt');
+

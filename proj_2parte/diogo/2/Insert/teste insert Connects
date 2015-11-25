@@ -1,0 +1,29 @@
+1. Diminuir new.end sem overlap []
+insert into Connects values ('2013-11-25', '2013-11-28', 123456789, 'Philips', 'www.pan3.pt');  
+
+2. Aumentar new.end sem overlap e com overlap []
+insert into Connects values ('2013-11-25', '2013-12-02', 123456789, 'Philips', 'www.pan3.pt');  
+insert into Connects values ('2013-11-25', '2015-12-02', 123456789, 'Philips', 'www.pan3.pt');  
+
+3. Diminuir new.start sem overlap e com overlap []
+insert into Connects values ('2013-10-25', '2013-12-01', 123456789, 'Philips', 'www.pan3.pt');
+insert into Connects values ('2012-10-25', '2013-12-01', 123456789, 'Philips', 'www.pan3.pt');
+
+4. Aumentar new.start sem overlap []
+insert into Connects values ('2013-11-26', '2013-12-01', 123456789, 'Philips', 'www.pan3.pt');
+
+5. Diminuir new.end e diminuir new.start sem overlap e com overlap []
+insert into Connects values ('2013-11-24', '2013-11-20', 123456789, 'Philips', 'www.pan3.pt');
+insert into Connects values ('2011-11-24', '2013-11-20', 123456789, 'Philips', 'www.pan3.pt');
+
+6. Diminuir new.end e aumentar new.start sem overlap []
+insert into Connects values ('2013-11-26', '2013-11-30', 123456789, 'Philips', 'www.pan3.pt');
+
+7. Aumentar new.end e diminuir new.start sem overlap e com overlap []
+insert into Connects values ('2013-11-24', '2013-12-02', 123456789, 'Philips', 'www.pan3.pt');
+insert into Connects values ('2011-11-24', '2015-12-02', 123456789, 'Philips', 'www.pan3.pt');
+
+8. Aumentar new.end e aumentar new.start sem overlap e com overlap []
+insert into Connects values ('2013-11-26', '2013-12-02', 123456789, 'Philips', 'www.pan3.pt');
+insert into Connects values ('2013-11-26', '2015-12-02', 123456789, 'Philips', 'www.pan3.pt');
+
