@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.27)  25 NOV 2015 14:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.14)  25 NOV 2015 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **relatorio.tex
 (./relatorio.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 5 languages loaded.
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -464,35 +464,110 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
-(./relatorio.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2013/01/06 v5.00 algorithms environments
+\c@AlgoLine=\count109
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+********************************************************
+Package `algorithm2e' Release 5.0 -- january 06 2013 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (cfiorio@um2.fr)
+********************************************************
+\skiptotal=\skip44
+\skiplinenumber=\skip45
+\skiprule=\skip46
+\skiphlne=\skip47
+\skiptext=\skip48
+\skiplength=\skip49
+\algomargin=\skip50
+\skipalgocfslide=\skip51
+\algowidth=\dimen122
+\inoutsize=\dimen123
+\inoutindent=\dimen124
+\interspacetitleruled=\dimen125
+\interspacealgoruled=\dimen126
+\interspacetitleboxruled=\dimen127
+\algocf@inoutbox=\box30
+\algocf@inputbox=\box31
+\AlCapSkip=\skip52
+\AlCapHSkip=\skip53
+\algoskipindent=\skip54
+\algocf@nlbox=\box32
+\algocf@hangingbox=\box33
+\algocf@untilbox=\box34
+\algocf@skipuntil=\skip55
+\algocf@capbox=\box35
+\algoheightruledefault=\skip56
+\algoheightrule=\skip57
+\algotitleheightruledefault=\skip58
+\algotitleheightrule=\skip59
+\c@algocfline=\count110
+\c@algocfproc=\count111
+\c@algocf=\count112
+\algocf@algoframe=\box36
+\algocf@algobox=\box37
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen128
+\extrarowheight=\dimen129
+\NC@list=\toks20
+\extratabsurround=\skip60
+\backup@length=\skip61
+)
+\TX@col@width=\dimen130
+\TX@old@table=\dimen131
+\TX@old@col=\dimen132
+\TX@target=\dimen133
+\TX@delta=\dimen134
+\TX@cols=\count113
+\TX@ftn=\toks21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+) (./relatorio.aux)
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-\AtBeginShipoutBox=\box30
-Package hyperref Info: Link coloring OFF on input line 16.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+\AtBeginShipoutBox=\box38
+Package hyperref Info: Link coloring OFF on input line 19.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count109
+\c@section@level=\count114
 )
-LaTeX Info: Redefining \ref on input line 16.
-LaTeX Info: Redefining \pageref on input line 16.
-LaTeX Info: Redefining \nameref on input line 16.
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
 
 (./relatorio.out) (./relatorio.out)
 \@outlinefile=\write4
@@ -501,17 +576,17 @@ LaTeX Info: Redefining \nameref on input line 16.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen122
-\scratchbox=\box31
-\nofMPsegments=\count111
-\nofMParguments=\count112
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen123
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
-\everyMPtoPDFconversion=\toks21
+\scratchcounter=\count115
+\scratchdimen=\dimen135
+\scratchbox=\box39
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen136
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -527,7 +602,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count116
+\c@lstlisting=\count121
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -552,48 +627,19 @@ Package babel Info: Redefining portuges shorthand "|
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./title.png (PNG copy)>])
-(./relatorio.toc
-
-! Package inputenc Error: Unicode char \u 8:\IeC {\c c}\IeC {\~a}o not set up f
-or use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...das tabelas da base de dados}{1}{section.1}
-                                                  
-Your command was ignored.
-Type I <command> <return> to replace it with another command,
-or <return> to continue without it.
-
-
-! Package inputenc Error: Unicode char \u 8:\IeC {\c c}\IeC {\~a}o not set up f
-or use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...textit {overlapping periods}}{4}{section.2}
-                                                  
-Your command was ignored.
-Type I <command> <return> to replace it with another command,
-or <return> to continue without it.
-
-)
+(./relatorio.toc)
 \tf@toc=\write5
 \openout5 = `relatorio.toc'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 26.
+(babel)             in language append on input line 29.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 26.
+(babel)             in language append on input line 29.
  [1]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 28.
+(babel)             in language append on input line 31.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 31.
+nput line 34.
  (./database.sql
 Overfull \hbox (62.9035pt too wide) in paragraph at lines 24--26
 [][][][][][][][][][][][][] 
@@ -650,227 +696,220 @@ Overfull \hbox (110.89215pt too wide) in paragraph at lines 93--94
 
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 36.
+(babel)             in language append on input line 39.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 36.
+(babel)             in language append on input line 39.
  [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 39.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
 
-Overfull \hbox (11.90881pt too wide) in paragraph at lines 44--45
+Overfull \hbox (11.90881pt too wide) in paragraph at lines 47--48
 []\T1/cmr/bx/n/10 vari�vel \T1/cmr/bx/it/10 nut4code \T1/cmr/bx/n/10 da ta-bela
  \T1/cmr/bx/it/10 Mu-ni-ci-pa-lity $\OMS/cmsy/m/n/10 !$ \T1/cmr/m/n/10 para est
 a ta-bela, considera-
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 58.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 58.
 [3] (./drop.sql)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 59.
+(babel)             in language append on input line 62.
+
+Overfull \hbox (8.5025pt too wide) in paragraph at lines 89--90
+\T1/cmr/m/n/10 guinte con-di-��o para dois in-ter-va-los so-bre-pos-tos: (start
+A$\OMS/cmsy/m/n/10 ^^T$\T1/cmr/m/n/10 endB)$\OMS/cmsy/m/n/10 \$\T1/cmr/m/n/10 (
+endA$\OMS/cmsy/m/n/10 ^^U$\T1/cmr/m/n/10 startB).
+ []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 78.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 78.
- [4]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 78.
- (./insert.sql
-Overfull \hbox (266.85526pt too wide) in paragraph at lines 3--4
-[][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (26.91202pt too wide) in paragraph at lines 9--11
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (44.90776pt too wide) in paragraph at lines 26--27
-[][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (56.90492pt too wide) in paragraph at lines 32--33
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-) <tabelas_insert_triggers.png, id=175, 432.86719pt x 286.82156pt>
-File: tabelas_insert_triggers.png Graphic file (type png)
-
-<use tabelas_insert_triggers.png>
-Package pdftex.def Info: tabelas_insert_triggers.png used on input line 87.
-(pdftex.def)             Requested size: 303.00496pt x 200.77371pt.
+(babel)             in language append on input line 91.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 93.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 93.
- [5]
-<insert_connects.png, id=227, 541.27219pt x 198.7425pt>
-File: insert_connects.png Graphic file (type png)
-
-<use insert_connects.png>
-Package pdftex.def Info: insert_connects.png used on input line 106.
-(pdftex.def)             Requested size: 378.88794pt x 139.11879pt.
-
-Overfull \hbox (33.88794pt too wide) in paragraph at lines 106--107
- [][] 
+[4] (./trigger_pan_device_insert.sql
+Overfull \hbox (14.91486pt too wide) in paragraph at lines 1--4
+[][][][][][][][][][][][][] 
  []
 
-<insert_wears.png, id=228, 548.80031pt x 390.70969pt>
-File: insert_wears.png Graphic file (type png)
- <use insert_wears.png>
-Package pdftex.def Info: insert_wears.png used on input line 115.
-(pdftex.def)             Requested size: 384.15758pt x 273.4949pt.
 
-Overfull \hbox (39.15758pt too wide) in paragraph at lines 115--116
- [][] 
+Overfull \hbox (8.91628pt too wide) in paragraph at lines 16--17
+[][][][][][][][][][][][][][][][][][][] 
  []
 
+)
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 120.
+(babel)             in language append on input line 100.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 100.
+ [5] (./trigger_pan_patient_insert.sql
+Overfull \hbox (20.91344pt too wide) in paragraph at lines 1--3
+[][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.90918pt too wide) in paragraph at lines 14--15
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.91486pt too wide) in paragraph at lines 15--16
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.9177pt too wide) in paragraph at lines 16--17
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.91486pt too wide) in paragraph at lines 18--19
+[][][][][][][][][][][][][][][][][] 
+ []
+
+) <tabelas_insert_triggers_Connects.png, id=214, 431.36156pt x 137.7647pt>
+File: tabelas_insert_triggers_Connects.png Graphic file (type png)
+
+<use tabelas_insert_triggers_Connects.png>
+Package pdftex.def Info: tabelas_insert_triggers_Connects.png used on input lin
+e 110.
+(pdftex.def)             Requested size: 301.95103pt x 96.43462pt.
+
+<tabelas_insert_triggers_Wears.png, id=215, 423.08063pt x 137.7647pt>
+File: tabelas_insert_triggers_Wears.png Graphic file (type png)
+
+<use tabelas_insert_triggers_Wears.png>
+Package pdftex.def Info: tabelas_insert_triggers_Wears.png used on input line 1
+16.
+(pdftex.def)             Requested size: 296.15442pt x 96.43462pt.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 122.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 122.
-[6 <./tabelas_insert_triggers.png (PNG copy)> <./insert_connects.png (PNG copy)
->]
+ [6 <./tabelas_insert_triggers_Connects.png (PNG copy)>] <erro_connect.png, id=
+252, 541.27219pt x 26.34843pt>
+File: erro_connect.png Graphic file (type png)
+
+<use erro_connect.png>
+Package pdftex.def Info: erro_connect.png used on input line 129.
+(pdftex.def)             Requested size: 378.88794pt x 18.44376pt.
+
+Overfull \hbox (33.88794pt too wide) in paragraph at lines 129--130
+ [][] 
+ []
+
+<good_connect.png, id=253, 541.27219pt x 44.41594pt>
+File: good_connect.png Graphic file (type png)
+ <use good_connect.png>
+Package pdftex.def Info: good_connect.png used on input line 135.
+(pdftex.def)             Requested size: 378.88794pt x 31.09093pt.
+
+Overfull \hbox (33.88794pt too wide) in paragraph at lines 135--136
+ [][] 
+ []
+
+<error_wears.jpg, id=254, 719.68875pt x 37.13875pt>
+File: error_wears.jpg Graphic file (type jpg)
+ <use error_wears.jpg>
+Package pdftex.def Info: error_wears.jpg used on input line 141.
+(pdftex.def)             Requested size: 381.43323pt x 19.68344pt.
+
+Overfull \hbox (36.43323pt too wide) in paragraph at lines 141--142
+ [][] 
+ []
+
+<good_wears.jpg, id=255, 723.70375pt x 54.2025pt>
+File: good_wears.jpg Graphic file (type jpg)
+ <use good_wears.jpg>
+Package pdftex.def Info: good_wears.jpg used on input line 147.
+(pdftex.def)             Requested size: 383.56116pt x 28.72717pt.
+
+Overfull \hbox (38.56116pt too wide) in paragraph at lines 147--148
+ [][] 
+ []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 123.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
+(babel)             in language append on input line 153.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 126.
+(babel)             in language append on input line 153.
+[7 <./tabelas_insert_triggers_Wears.png (PNG copy)> <./erro_connect.png (PNG co
+py)> <./good_connect.png (PNG copy)> <./error_wears.jpg> <./good_wears.jpg>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 126.
- [7 <./insert_wears.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
+(babel)             in language append on input line 153.
+
+Overfull \hbox (8.97672pt too wide) in paragraph at lines 162--163
+[]\T1/cmr/m/it/10 create trig-ger check_overlap_time_period_Device_PAN be-fore 
+in-sert on Con-
+ []
+
+
+Overfull \hbox (8.97672pt too wide) in paragraph at lines 164--165
+[]\T1/cmr/m/it/10 create trig-ger check_overlap_time_period_Device_PAN be-fore 
+in-sert on Con-
+ []
+
+<update_connects.jpg, id=265, 580.1675pt x 208.78pt>
+File: update_connects.jpg Graphic file (type jpg)
+ <use update_connects.jpg>
+Package pdftex.def Info: update_connects.jpg used on input line 172.
+(pdftex.def)             Requested size: 290.08302pt x 104.38972pt.
+
+<update_wears.jpg, id=266, 567.11874pt x 200.75pt>
+File: update_wears.jpg Graphic file (type jpg)
+ <use update_wears.jpg>
+Package pdftex.def Info: update_wears.jpg used on input line 178.
+(pdftex.def)             Requested size: 283.55867pt x 100.37474pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 186.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 189.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 189.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 189.
+
+[8 <./update_connects.jpg> <./update_wears.jpg>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 189.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 189.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 189.
  (./relatorio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
-
-
-Package rerunfilecheck Warning: File `relatorio.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `relatorio.out':
-(rerunfilecheck)             Before: A0E3A11A9B91A911D0B5D27690D18A50;463
-(rerunfilecheck)             After:  0A232C6ACAA2F903441D14D023BF6224;344.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 189.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 189.
+Package rerunfilecheck Info: File `relatorio.out' has not changed.
+(rerunfilecheck)             Checksum: 0A232C6ACAA2F903441D14D023BF6224;344.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 189.
  ) 
 Here is how much of TeX's memory you used:
- 8924 strings out of 494963
- 129785 string characters out of 6179646
- 243623 words of memory out of 5000000
- 11877 multiletter control sequences out of 15000+600000
+ 10467 strings out of 493304
+ 151696 string characters out of 6139870
+ 291919 words of memory out of 5000000
+ 13597 multiletter control sequences out of 15000+600000
  13985 words of font info for 30 fonts, out of 8000000 for 9000
- 38 hyphenation exceptions out of 8191
- 36i,7n,40p,626b,1807s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/diogo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1200.600pk> </home/d
-iogo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/diogo/.texmf
--var/fonts/pk/ljfour/jknappen/ec/ecbi1440.600pk> </home/diogo/.texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecti1000.600pk> </home/diogo/.texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecrm1000.600pk> </home/diogo/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-ecbi1000.600pk> </home/diogo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.60
-0pk> </home/diogo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home
-/diogo/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/diogo/.tex
-mf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/diogo/.texmf-var/font
-s/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/diogo/.texmf-var/fonts/pk/ljfour
-/jknappen/ec/eccc1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb>
-Output written on relatorio.pdf (9 pages, 343846 bytes).
+ 957 hyphenation exceptions out of 8191
+ 36i,6n,40p,655b,1808s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfbi1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1440.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on relatorio.pdf (11 pages, 376185 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 170 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 363 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
+ 195 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             r explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.116 ... inserção para a tabela \textit{Wears}}
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 120.
-
-! Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.121 À
-         semelhança dos testes que realizámos para os \textit{triggers} de...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-! Package inputenc Error: Unicode char \u8:çad not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.121 À semelhança d
-                      os testes que realizámos para os \textit{triggers} de...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! Package inputenc Error: Unicode char \u8:ámo not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.121 À semelhança dos testes que realizámo
-                                              s para os \textit{triggers} de...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 123.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 126.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 126.
-[6]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 126.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 126.
- [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
- (./relatorio.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 126.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 126.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
- ) 
-Here is how much of TeX's memory you used:
- 11584 strings out of 495597
- 163269 string characters out of 6186336
- 255858 words of memory out of 5000000
- 14695 multiletter control sequences out of 15000+600000
- 13432 words of font info for 28 fonts, out of 8000000 for 9000
- 38 hyphenation exceptions out of 8191
- 36i,7n,45p,611b,1815s stack positions out of 5000i,500n,10000p,200000b,80000s
-
-Output written on relatorio.pdf (9 pages).

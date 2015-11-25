@@ -12,6 +12,9 @@
 \usepackage{listings}
 \usepackage[hypcap]{caption} % makes \ref point to top of figures and tables
 \newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage[]{algorithm2e}
+\usepackage{tabularx}
+\usepackage{lscape}
 
 \begin{document}
 \lstset{language=Pascal}
@@ -57,7 +60,7 @@ Inicialmente, acrescentam-se as seguintes instruções de forma a apagar eventua
 \lstinputlisting{drop.sql}
 
 \section{\textit{Triggers} para prevenção de \textit{overlapping periods}}
-A função dos \textit{triggers} é de prevenir a inserção de associações a PAN's por parte de pacientes ou de aparelhos médicos em periodos de tempo sobrepostos. 
+A função dos \textit{triggers} é de prevenir a inserção/actualização de associações a PANs por parte de pacientes ou de aparelhos médicos em periodos de tempo sobrepostos. 
 
 A \textit{error message} deve ser apresentada de forma a evitar que ocorram casos,  para a tabela \textit{Wears}, como os seguintes:
 \vskip 5mm
@@ -74,52 +77,112 @@ A \textit{error message} deve ser apresentada de forma a evitar que ocorram caso
 \item Device 1 está ligado a PAN1 e PAN2 ao mesmo tempo.
 
 \end{itemize}
-\pagebreak
+
+A condição de sobreposição de períodos, independentemente da tabela em questão obtém-se através da análise do problema com a aplicação das leis de De Morgan. Ora, não existe sobreposição de períodos em dois casos:
+\begin{enumerate}
+\item o intervalo inserido/atualizado é completamente anterior aos intervalos já inseridos na tabela;
+\item o intervalo inserido/atualizado é completamente posterior aos intervalos já inseridos na tabela.
+\end{enumerate}
+
+Seja A um intervalo definido por startA e endA e o intervalo B definido por startB e endB. Os intervalos A e B não se encontram sobrepostos sempre que: (startA$\geq$endB) $\cup$ (endA$\leq$startB).
+
+Negando a condição obtém-se todos os casos para os quais os intervalos A e B se encontram sobrepostos. Assim, através das leis de De Morgan obtem-se a seguinte condição para dois intervalos sobrepostos: (startA$\leq$endB)$\cap$(endA$\geq$startB). Esta condição é aplicada em todos os \textit{triggers} que se apresentam de seguida.
+
 \subsection{\textit{Triggers} de \textit{insert}}
+Para a tabela \textit{Connects}, não se pode inserir o mesmo \textit{device} em duas PANs distintas no mesmo período de tempo. Desta forma, para cada linha dentro da tabela onde se pretende inserir o novo aparelho, será avaliado \textit{a priori} se este já se encontra contido nos registos da tabela. Posteriormente, avalia-se se este \textit{device} possui um PAN diferente, associado em períodos de tempo sobrepostos aos que se encontram nos registos da tabela.
 
-Os triggers desenvolvidos foram os seguintes:
+O \textit{trigger} para a tabela \textit{Connects} tem o seguinte código:
 
-\lstinputlisting{insert.sql}
+\lstinputlisting{trigger_pan_device_insert.sql}
 
+Relativamente à tabela \textit{Wears}, o raciocínio aplicado é semelhante. Um paciente não pode ter duas PANs ao mesmo tempo e dois pacientes não podem partilhar a mesma PAN. Este caso, gera uma condição adicional, que não surgia no caso anterior. As condições são assim semelhantes às apresentadas anteriormente, sendo ainda verificado se o paciente se encontra na tabela e se a PAN que se pretende que o mesmo utilize está actualmente em utilização por um paciente distinto. No caso de o paciente se encontrar nos registos, verifica-se se a PAN que está a utilizar é a mesma e única no período de tempo.
+\pagebreak
+
+O \textit{trigger} para a tabela \textit{Wears} tem o seguinte código:
+\vskip 5mm
+\lstinputlisting{trigger_pan_patient_insert.sql}
+%----------------------------------------------------------------------------------------------
+\vskip 5mm
 Por forma a testar o funcionamento dos \textit{triggers} atrás apresentados, utilizámos a base de dados fornecida no ficheiro \textit{database\_triggers\_insert.sql}. Após correr as instruções, obtêm-se as seguintes tabelas:
+
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.7]{tabelas_insert_triggers.png}
-\caption{Tabelas para teste de \textit{insert} dos \textit{triggers}}
+\includegraphics[scale=0.7]{tabelas_insert_triggers_Connects.png}
+\caption{Tabela \textit{Connects}}
 \end{figure}
 
-Os testes realizados foram sucessivas inserções de um dispositivo em PAN's diferentes sobreposto a pelo menos uma entrada da tabela.
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{tabelas_insert_triggers_Wears.png}
+\caption{Tabela \textit{Wears}}
+\end{figure}
+
+\vskip 7mm
+Os testes realizados foram sucessivas inserções de um dispositivo em PANs diferentes sobreposto a pelo menos uma entrada da tabela.
 
 Os testes realizados estão contidos nos ficheiros \textit{teste\_insert\_connects.sql} e \textit{teste\_insert\_connects.sql}, apresentados em anexo e que contem uma série de instruções e respectivos comentários.
-%\vskip 5mm
-%\textit{teste\_insert\_connects.sql}:
-%\lstinputlisting{teste_insert_connects.sql}
-%
-%\pagebreak
-%\textit{teste\_insert\_wears.sql}:
-%\lstinputlisting{teste_insert_wears.sql}
 
-Correndo os ficheiros de teste verificam-se os seguintes resultados:
+Correndo os ficheiros de teste verifica-se um de quatro dos seguintes resultados, consoante as tabelas a alterar e cosoante seja uma um \textit{update}/inserção válido ou inválido:
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.7]{insert_connects.png}
+\includegraphics[scale=0.7]{erro_connect.png}
+\caption{Mensagem de erro de inserção para a tabela \textit{Connects}}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{good_connect.png}
+\caption{Mensagem sucesso de inserção para a tabela \textit{Connects}}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{error_wears.jpg}
 \caption{Resultados dos testes do \textit{trigger} de inserção para a tabela \textit{Connects}}
 \end{figure}
 
-Verifica-se deste modo, que, tal como era esperado, as quatro primeiras tentativas de inserção de valores na tabela falharam devido à existência de \textit{overlap} e as restantes seriam inseridas caso os \textit{time periods} estivessem na tabela \textit{Period}.
-%Explicação dos resultados
-
 \begin{figure}[ht!]
 \centering
-\includegraphics[scale=0.7]{insert_wears.png}
-\caption{Resultados dos testes do \textit{trigger} de inserção para a tabela \textit{Wears}}
+\includegraphics[scale=0.53]{good_wears.jpg}
+\caption{Resultados dos testes do \textit{trigger} de inserção para a tabela \textit{Connects}}
 \end{figure}
 
-%explicação dos resultados
+Em caso de sucesso, ou seja, sem sobreposição, surge uma mensagem de erro devido ao facto de o período inserido não existir na tabela \textit{Period}. Caso estivesse, não ocorreria o erro e a tabela seria atualizada.
+\pagebreak
 \subsection{\textit{Triggers} de \textit{update}}
 À semelhança dos testes que realizámos para os \textit{triggers} de \textit{insert} para as duas tabelas, os ficheiros de teste para os \textit{triggers} de \textit{update} encontram-se no ficheiro .zip, com os nomes \textit{teste\_update\_connects.sql} e \textit{teste\_update\_wears.sql}.
 
+Os \textit{triggers} relativos a esta secção só diferem dos anteriores na medida em que são efectuados antes de um \textit{update} em vez de antes de um \textit{insert}. Assim, nos troços de código anteriores, onde se lê 
+
+\textit{create trigger check\_overlap\_time\_period\_Patient\_PAN before insert on Wears} deve-se ler
+
+ \textit{create trigger check\_overlap\_time\_period\_Patient\_PAN before update on Wears} e onde se lê
+ 
+  \textit{create trigger check\_overlap\_time\_period\_Device\_PAN before insert on Connects} deve-se ler
+  
+   \textit{create trigger check\_overlap\_time\_period\_Device\_PAN before insert on Connects}.
+
+No entanto, para esta secção foi utilizado um maior número de testes pois existe um maior número de casos de atualizações possíveis do que inserções.
+
+Assim, a base de dados utilizada para os testes foi a presente no ficheiro \textit{database\_triggers\_update.sql}, sendo obtidas as seguintes tabelas:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.5]{update_connects.jpg}
+\caption{Tabela \textit{Connects}}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.5]{update_wears.jpg}
+\caption{Tabela \textit{Wears}}
+\end{figure}
+
+
+Na tabela da figura 7, a linha que é atualizada é sempre a última, correspondente a um \textit{device} igual a pelo menos um que se encontra na tabela. Porém, possui um PAN diferente destes.
+
+Na tabela da figura 8, as linhas que são atualizadas são a segunda e última linhas que testam,  respectivamente, dois pacientes possuirem a mesma PAN simultaneamente e o mesmo paciente ter duas PANs simultaneamente.
 \section{\textit{SQL queries}}
 
 
