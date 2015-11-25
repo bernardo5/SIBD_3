@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.14)  25 NOV 2015 14:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.14)  25 NOV 2015 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -534,7 +534,7 @@ Package caption Info: End \AtBeginDocument code.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 ) (./rosto.tex
-<./title.png, id=20, 674.2791pt x 156.8259pt>
+<./title.png, id=24, 674.2791pt x 156.8259pt>
 File: ./title.png Graphic file (type png)
  <use ./title.png>
 Package pdftex.def Info: ./title.png used on input line 5.
@@ -672,7 +672,7 @@ Overfull \hbox (56.90492pt too wide) in paragraph at lines 32--33
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) <tabelas_insert_triggers.png, id=170, 432.86719pt x 286.82156pt>
+) <tabelas_insert_triggers.png, id=175, 432.86719pt x 286.82156pt>
 File: tabelas_insert_triggers.png Graphic file (type png)
 
 <use tabelas_insert_triggers.png>
@@ -682,13 +682,8 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 93.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 93.
- [5] (./teste_insert_connects.sql)
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 99.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 99.
- [6 <./tabelas_insert_triggers.png (PNG copy)>] (./teste_insert_wears.sql)
-<insert_connects.png, id=244, 541.27219pt x 198.7425pt>
+ [5]
+<insert_connects.png, id=227, 541.27219pt x 198.7425pt>
 File: insert_connects.png Graphic file (type png)
 
 <use insert_connects.png>
@@ -699,7 +694,7 @@ Overfull \hbox (33.88794pt too wide) in paragraph at lines 106--107
  [][] 
  []
 
-<insert_wears.png, id=245, 548.80031pt x 390.70969pt>
+<insert_wears.png, id=228, 548.80031pt x 390.70969pt>
 File: insert_wears.png Graphic file (type png)
  <use insert_wears.png>
 Package pdftex.def Info: insert_wears.png used on input line 115.
@@ -715,27 +710,29 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 122.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 122.
-[7 <./insert_connects.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
+[6 <./tabelas_insert_triggers.png (PNG copy)> <./insert_connects.png (PNG copy)
+>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 123.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 123.
- [8 <./insert_wears.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
-
-(./relatorio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
+(babel)             in language append on input line 126.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 126.
+ [7 <./insert_wears.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
+ (./relatorio.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
 Package rerunfilecheck Info: File `relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: A7CF93CC3FF0A324D29D914387BD2D36;298.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
+(rerunfilecheck)             Checksum: 0A232C6ACAA2F903441D14D023BF6224;344.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
  ) 
 Here is how much of TeX's memory you used:
- 8980 strings out of 493304
- 130680 string characters out of 6139870
+ 8923 strings out of 493304
+ 129775 string characters out of 6139870
  247669 words of memory out of 5000000
- 12114 multiletter control sequences out of 15000+600000
+ 12108 multiletter control sequences out of 15000+600000
  13985 words of font info for 30 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  36i,7n,40p,626b,1807s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -750,10 +747,10 @@ share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/ty
 pe1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on relatorio.pdf (10 pages, 448771 bytes).
+Output written on relatorio.pdf (9 pages, 449680 bytes).
 PDF statistics:
- 374 PDF objects out of 1000 (max. 8388607)
- 341 compressed objects within 4 object streams
- 215 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 321 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
+ 170 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
