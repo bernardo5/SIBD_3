@@ -131,9 +131,11 @@ insert into Device values (3, 'Philips', 'scale');
 insert into Device values (4, 'Philips', 'scale');
 insert into Device values (5, 'Philips', 'scale');
 insert into Device values (6, 'Philips', 'scale');
+insert into Device values (7, 'Samsung', 'oxygen rate');
 
 insert into Actuator values (123456790, 'Philips', 'scale');
 insert into Actuator values (123456791, 'Philips', 'insuline meter');
+insert into Actuator values (7, 'Samsung', 'oxygen rate');
 
 insert into Sensor values (123456789, 'RPG', 'blood pressure');
 insert into Sensor values (123456789, 'Philips', 'blood pressure');
@@ -180,7 +182,7 @@ insert into Connects values ('2011-10-09', '2999-12-31', 3, 'Philips', 'www.pan5
 insert into Connects values ('2011-10-09', '2999-12-31', 4, 'Philips', 'www.pan6.pt');
 insert into Connects values ('2011-10-09', '2999-12-31', 5, 'Philips', 'www.pan6.pt');
 insert into Connects values ('2010-10-09', '2999-12-31', 6, 'Philips', 'www.pan1.pt');
-
+insert into Connects values ('2010-10-09', '2999-12-31', 7, 'Samsung', 'www.pan3.pt');
 
 
 insert into Wears values ('2014-10-09', '2999-12-31', '001-54245-1555575', 'www.pan2.pt'); /*Martins nova -> 2*/
@@ -203,5 +205,6 @@ insert into Municipality values (8125, 'Quarteira');
 
 insert into Lives values ('2012-10-10', '2014-11-19', '001-54245-1555555', 2870);
 
-insert into Setting values (123456790, 'Philips', '2015-11-24 09:45:00', 24);
+insert into Setting values (123456790, 'Philips', '2015-11-23 09:45:00', 24);
+insert into Setting values (7, 'Samsung', '2015-11-23 00:45:00', 5);
 

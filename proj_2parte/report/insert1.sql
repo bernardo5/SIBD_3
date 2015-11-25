@@ -34,14 +34,16 @@ create table Sensor(
 	manuf varchar(255),
 	units varchar(255),
 	primary key(snum, manuf),
-	foreign key(snum, manuf) references Device(serialnum, manufacturer));
+	foreign key(snum, manuf) references 
+		Device(serialnum, manufacturer));
 
 create table Actuator(
 	snum integer,
 	manuf varchar(255),
 	units varchar(255),
 	primary key(snum, manuf),
-	foreign key(snum, manuf) references Device(serialnum, manufacturer));
+	foreign key(snum, manuf) 
+		references Device(serialnum, manufacturer));
 
 create table Municipality(
 	nut4code integer,
@@ -104,10 +106,14 @@ create table Connects(
 	foreign key(snum, manuf) references Device(serialnum, manufacturer),
 	foreign key(pan) references PAN(domain));
 
-insert into Patient values ('001-54245-1555555', 'Bernardo Gomes', 'Rua Alves Redol');
-insert into Patient values ('001-54245-1555575', 'Diogo Martins', 'Avenida João Crisóstomo');
-insert into Patient values ('001-54745-1555556', 'Diogo Proença', 'Avenida Praia da Vitória');
-insert into Patient values ('001-54245-1855555', 'Zé Manel', 'Avenida Duque de Ávila');
+insert into Patient values ('001-54245-1555555', 
+	'Bernardo Gomes', 'Rua Alves Redol');
+insert into Patient values ('001-54245-1555575', 
+	'Diogo Martins', 'Avenida João Crisóstomo');
+insert into Patient values ('001-54745-1555556', 
+	'Diogo Proença', 'Avenida Praia da Vitória');
+insert into Patient values ('001-54245-1855555', 
+	'Zé Manel', 'Avenida Duque de Ávila');
 
 insert into PAN values ('www.pan1.pt', '+351 91 000 00 00');
 insert into PAN values ('www.pan2.pt', '+351 91 000 00 01');
@@ -134,15 +140,23 @@ insert into Period values ('2014-12-25', '2015-01-01');
 insert into Period values ('2015-04-01', '2015-10-25');
 insert into Period values ('2015-10-26', '2015-11-26');
 
-insert into Connects values ('2011-10-09', '2012-12-01', 123456789, 'Philips', 'www.pan1.pt');
-insert into Connects values ('2014-12-25', '2015-01-01', 123456790, 'Philips', 'www.pan1.pt');
-insert into Connects values ('2015-04-01', '2015-10-25', 123456789, 'Philips', 'www.pan1.pt');
-insert into Connects values ('2015-10-26', '2015-11-26', 123456789, 'Philips', 'www.pan1.pt');
+insert into Connects values ('2011-10-09', '2012-12-01', 123456789,
+	'Philips', 'www.pan1.pt');
+insert into Connects values ('2014-12-25', '2015-01-01', 123456790, 
+	'Philips', 'www.pan1.pt');
+insert into Connects values ('2015-04-01', '2015-10-25', 123456789, 
+	'Philips', 'www.pan1.pt');
+insert into Connects values ('2015-10-26', '2015-11-26', 123456789, 
+	'Philips', 'www.pan1.pt');
 
-insert into Wears values ('2011-10-09', '2012-12-01', '001-54245-1555555', 'www.pan1.pt');
-insert into Wears values ('2014-12-25', '2015-01-01', '001-54245-1555555', 'www.pan1.pt');
-insert into Wears values ('2015-04-01', '2015-10-25', '001-54245-1555555', 'www.pan1.pt');
-insert into Wears values ('2015-10-26', '2015-11-26', '001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2011-10-09', '2012-12-01', 
+	'001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2014-12-25', '2015-01-01', 
+	'001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2015-04-01', '2015-10-25', 
+	'001-54245-1555555', 'www.pan1.pt');
+insert into Wears values ('2015-10-26', '2015-11-26', 
+	'001-54245-1555555', 'www.pan1.pt');
 
 
 

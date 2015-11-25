@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.14)  25 NOV 2015 19:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.11.14)  25 NOV 2015 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -609,7 +609,7 @@ Package caption Info: End \AtBeginDocument code.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 ) (./rosto.tex
-<./title.png, id=24, 674.2791pt x 156.8259pt>
+<./title.png, id=32, 674.2791pt x 156.8259pt>
 File: ./title.png Graphic file (type png)
  <use ./title.png>
 Package pdftex.def Info: ./title.png used on input line 5.
@@ -773,7 +773,7 @@ Overfull \hbox (14.91486pt too wide) in paragraph at lines 18--19
 [][][][][][][][][][][][][][][][][] 
  []
 
-) <tabelas_insert_triggers_Connects.png, id=214, 431.36156pt x 137.7647pt>
+) <tabelas_insert_triggers_Connects.png, id=224, 431.36156pt x 137.7647pt>
 File: tabelas_insert_triggers_Connects.png Graphic file (type png)
 
 <use tabelas_insert_triggers_Connects.png>
@@ -781,7 +781,7 @@ Package pdftex.def Info: tabelas_insert_triggers_Connects.png used on input lin
 e 110.
 (pdftex.def)             Requested size: 301.95103pt x 96.43462pt.
 
-<tabelas_insert_triggers_Wears.png, id=215, 423.08063pt x 137.7647pt>
+<tabelas_insert_triggers_Wears.png, id=225, 423.08063pt x 137.7647pt>
 File: tabelas_insert_triggers_Wears.png Graphic file (type png)
 
 <use tabelas_insert_triggers_Wears.png>
@@ -793,7 +793,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 122.
  [6 <./tabelas_insert_triggers_Connects.png (PNG copy)>] <erro_connect.png, id=
-252, 541.27219pt x 26.34843pt>
+262, 541.27219pt x 26.34843pt>
 File: erro_connect.png Graphic file (type png)
 
 <use erro_connect.png>
@@ -804,7 +804,7 @@ Overfull \hbox (33.88794pt too wide) in paragraph at lines 129--130
  [][] 
  []
 
-<good_connect.png, id=253, 541.27219pt x 44.41594pt>
+<good_connect.png, id=263, 541.27219pt x 44.41594pt>
 File: good_connect.png Graphic file (type png)
  <use good_connect.png>
 Package pdftex.def Info: good_connect.png used on input line 135.
@@ -814,7 +814,7 @@ Overfull \hbox (33.88794pt too wide) in paragraph at lines 135--136
  [][] 
  []
 
-<error_wears.jpg, id=254, 719.68875pt x 37.13875pt>
+<error_wears.jpg, id=264, 719.68875pt x 37.13875pt>
 File: error_wears.jpg Graphic file (type jpg)
  <use error_wears.jpg>
 Package pdftex.def Info: error_wears.jpg used on input line 141.
@@ -824,7 +824,7 @@ Overfull \hbox (36.43323pt too wide) in paragraph at lines 141--142
  [][] 
  []
 
-<good_wears.jpg, id=255, 723.70375pt x 54.2025pt>
+<good_wears.jpg, id=265, 723.70375pt x 54.2025pt>
 File: good_wears.jpg Graphic file (type jpg)
  <use good_wears.jpg>
 Package pdftex.def Info: good_wears.jpg used on input line 147.
@@ -854,13 +854,13 @@ Overfull \hbox (8.97672pt too wide) in paragraph at lines 164--165
 in-sert on Con-
  []
 
-<update_connects.jpg, id=265, 580.1675pt x 208.78pt>
+<update_connects.jpg, id=275, 580.1675pt x 208.78pt>
 File: update_connects.jpg Graphic file (type jpg)
  <use update_connects.jpg>
 Package pdftex.def Info: update_connects.jpg used on input line 172.
 (pdftex.def)             Requested size: 290.08302pt x 104.38972pt.
 
-<update_wears.jpg, id=266, 567.11874pt x 200.75pt>
+<update_wears.jpg, id=276, 567.11874pt x 200.75pt>
 File: update_wears.jpg Graphic file (type jpg)
  <use update_wears.jpg>
 Package pdftex.def Info: update_wears.jpg used on input line 178.
@@ -877,25 +877,25 @@ Overfull \hbox (20.91344pt too wide) in paragraph at lines 15--16
 [][][][][][][][][][][][][][][][][][][]
  []
 
-) <3awears.jpg, id=273, 564.1075pt x 156.585pt>
+) <3awears.jpg, id=283, 564.1075pt x 156.585pt>
 File: 3awears.jpg Graphic file (type jpg)
  <use 3awears.jpg>
 Package pdftex.def Info: 3awears.jpg used on input line 198.
 (pdftex.def)             Requested size: 298.97554pt x 82.98964pt.
 
-<3aconnects.jpg, id=274, 592.2125pt x 225.84375pt>
+<3aconnects.jpg, id=284, 592.2125pt x 225.84375pt>
 File: 3aconnects.jpg Graphic file (type jpg)
  <use 3aconnects.jpg>
 Package pdftex.def Info: 3aconnects.jpg used on input line 204.
 (pdftex.def)             Requested size: 313.87112pt x 119.69661pt.
 
-<3areading.jpg, id=275, 504.88625pt x 223.83624pt>
+<3areading.jpg, id=285, 504.88625pt x 223.83624pt>
 File: 3areading.jpg Graphic file (type jpg)
  <use 3areading.jpg>
 Package pdftex.def Info: 3areading.jpg used on input line 210.
 (pdftex.def)             Requested size: 267.58842pt x 118.63263pt.
 
-<3adevice.jpg, id=276, 415.5525pt x 261.97874pt>
+<3adevice.jpg, id=286, 415.5525pt x 261.97874pt>
 File: 3adevice.jpg Graphic file (type jpg)
  <use 3adevice.jpg>
 Package pdftex.def Info: 3adevice.jpg used on input line 216.
@@ -904,7 +904,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 221.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 221.
- [9 <./3awears.jpg>] <teste3a.jpg, id=313, 654.445pt x 173.64874pt>
+ [9 <./3awears.jpg>] <teste3a.jpg, id=323, 654.445pt x 173.64874pt>
 File: teste3a.jpg Graphic file (type jpg)
  <use teste3a.jpg>
 Package pdftex.def Info: teste3a.jpg used on input line 226.
@@ -948,7 +948,7 @@ Overfull \hbox (38.90918pt too wide) in paragraph at lines 11--12
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) <3b.jpg, id=321, 239.89626pt x 131.49126pt>
+) <3b.jpg, id=331, 239.89626pt x 131.49126pt>
 File: 3b.jpg Graphic file (type jpg)
  <use 3b.jpg>
 Package pdftex.def Info: 3b.jpg used on input line 259.
@@ -977,7 +977,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 301.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 301.
- [12 <./3b.jpg>] <teste3c.jpg, id=362, 221.82875pt x 151.56625pt>
+ [12 <./3b.jpg>] <teste3c.jpg, id=372, 221.82875pt x 151.56625pt>
 File: teste3c.jpg Graphic file (type jpg)
 
 <use teste3c.jpg>
@@ -988,28 +988,117 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language append on input line 356.
  [13 <./teste3c.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 366.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 366.
+(babel)             in language append on input line 365.
+
+<index_php.png, id=378, 569.12625pt x 223.58531pt>
+File: index_php.png Graphic file (type png)
+ <use index_php.png>
+Package pdftex.def Info: index_php.png used on input line 374.
+(pdftex.def)             Requested size: 301.63547pt x 118.49963pt.
+
+<Readings_Settings_html.png, id=379, 564.60938pt x 152.06813pt>
+File: Readings_Settings_html.png Graphic file (type png)
+
+<use Readings_Settings_html.png>
+Package pdftex.def Info: Readings_Settings_html.png used on input line 388.
+(pdftex.def)             Requested size: 299.24153pt x 80.59572pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language append on input line 366.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 366.
+(babel)             in language append on input line 390.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 390.
+ [14 <./index_php.png (PNG copy)>]
+<Patient_intermidiate_php.png, id=385, 564.60938pt x 261.97874pt>
+File: Patient_intermidiate_php.png Graphic file (type png)
+
+<use Patient_intermidiate_php.png>
+Package pdftex.def Info: Patient_intermidiate_php.png used on input line 394.
+(pdftex.def)             Requested size: 299.24153pt x 138.84807pt.
+
+<diogo.png, id=386, 611.28375pt x 398.23781pt>
+File: diogo.png Graphic file (type png)
+ <use diogo.png>
+Package pdftex.def Info: diogo.png used on input line 406.
+(pdftex.def)             Requested size: 323.97884pt x 211.06503pt.
+
+<ze.png, id=387, 372.64218pt x 348.55219pt>
+File: ze.png Graphic file (type png)
+ <use ze.png>
+Package pdftex.def Info: ze.png used on input line 412.
+(pdftex.def)             Requested size: 197.4994pt x 184.73177pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 417.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 417.
+ [15 <./Readings_Settings_html.png (PNG copy)> <./Patient_intermidiate_php.png 
+(PNG copy)>]
+<transfer_php.png, id=394, 494.59781pt x 411.03563pt>
+File: transfer_php.png Graphic file (type png)
+ <use transfer_php.png>
+Package pdftex.def Info: transfer_php.png used on input line 421.
+(pdftex.def)             Requested size: 262.13557pt x 217.84784pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 426.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 426.
+
+[16 <./diogo.png (PNG copy)> <./ze.png (PNG copy)>]
+<transfer2.png, id=401, 897.3525pt x 429.605pt>
+File: transfer2.png Graphic file (type png)
+ <use transfer2.png>
+Package pdftex.def Info: transfer2.png used on input line 429.
+(pdftex.def)             Requested size: 269.20782pt x 128.88249pt.
+
+<transfer3.png, id=402, 473.77pt x 255.95625pt>
+File: transfer3.png Graphic file (type png)
+ <use transfer3.png>
+Package pdftex.def Info: transfer3.png used on input line 437.
+(pdftex.def)             Requested size: 251.09691pt x 135.65616pt.
+
+<transfer4.png, id=403, 870.25125pt x 440.64626pt>
+File: transfer4.png Graphic file (type png)
+ <use transfer4.png>
+Package pdftex.def Info: transfer4.png used on input line 445.
+(pdftex.def)             Requested size: 348.09433pt x 176.25537pt.
+
+Overfull \hbox (3.09433pt too wide) in paragraph at lines 445--446
+ [][] 
+ []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 453.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 453.
+[17 <./transfer_php.png (PNG copy)> <./transfer2.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 453.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 453.
+ [18 <./transfer3.png> <./transfer4.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 453.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 455.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 455.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language append on input line 455.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 455.
  (./relatorio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 366.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 366.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 455.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 455.
 Package rerunfilecheck Info: File `relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: 0A232C6ACAA2F903441D14D023BF6224;344.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 366.
+(rerunfilecheck)             Checksum: E7A37E0447B513B854A86BA8CCB47A6F;441.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 455.
  ) 
 Here is how much of TeX's memory you used:
- 10598 strings out of 493304
- 153425 string characters out of 6139870
+ 10661 strings out of 493304
+ 154509 string characters out of 6139870
  291919 words of memory out of 5000000
- 13642 multiletter control sequences out of 15000+600000
+ 13680 multiletter control sequences out of 15000+600000
  13985 words of font info for 30 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 36i,6n,40p,655b,1808s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,6n,40p,677b,1808s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/
 type1/public/cm-super/sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
@@ -1021,10 +1110,10 @@ share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/ty
 pe1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on relatorio.pdf (16 pages, 542282 bytes).
+Output written on relatorio.pdf (21 pages, 934252 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 422 compressed objects within 5 object streams
- 266 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 525 PDF objects out of 1000 (max. 8388607)
+ 459 compressed objects within 5 object streams
+ 282 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

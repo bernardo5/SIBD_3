@@ -4,3 +4,5 @@
 \contentsline {subsection}{\numberline {2.1}\textit {Triggers} de \textit {insert}}{5}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}\textit {Triggers} de \textit {update}}{8}{subsection.2.2}
 \contentsline {section}{\numberline {3}\textit {SQL queries}}{9}{section.3}
+\contentsline {section}{\numberline {4}\textit {Web based application}}{14}{section.4}
+\contentsline {section}{\numberline {5}Anexos}{19}{section.5}

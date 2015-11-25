@@ -362,5 +362,94 @@ O resultado obtido deverá ser o seguinte:
 	se encontra a viver num muncicípio coberto pelo Medical Center.
 	\end{itemize}		
 	
+\section{\textit{Web based application}}
+Para a aplicação \textit{web}, foi criada uma página inicial,
+
+\textit{http://web.ist.utl.pt/ist175573/index\_\_.php} por forma a que o utilizador possa escolher quais as leituras e/ou alterações que pretende implementar na base de dados.
+ 
+Assim, tal como pode ser verificado na figura 16, é feita uma distinção para acções de consulta da base de dados e de alterações à mesma. Tendo o trabalho apenas um fim académico, não foram implementadas todas as funcionalidades que seriam de esperar numa base de dados a apresentar a um cliente. Como tal, as funcionalidades dispostas são apenas as pedidas nas alíneas a) e b) do ponto quatro do enunciado do problema.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{index_php.png}
+\caption{Página de apresentação da aplicação \textit{web}}
+\end{figure}
 	
+No ponto a), pede-se que dado um certo paciente, sejam dispostos todos os seus dados de \textit{readings} e \textit{settings}. O utilizador poderá assim aceder a esta funcionalidade pela hiperligação \textit{Readings and Settings of a patient} do conjunto \textit{Information check}.
+
+Ao fazê-lo, será redireccionado para uma página de formulário denominada \textit{Readings\_Settings.html} que pede o nome do paciente que se pretende saber as informações. Esta página encontra-se disposta na figura 17.
+
+O resultado obtido no formulário passará posteriormente por uma página \textit{Patient\_intermidiate.php} com a finalidade de desambiguação. Assim, esta página, irá procurar todos os pacientes cujos nomes contenham a sequência de caracteres dadas pelo utilizador, questionando o mesmo qual dos pacientes é que se pretende obter os resultados.
+
+No caso de o utilizador não escrever nenhuma sequência de caracteres, são apresentados todos os pacientes presentes na base de dados, tal como apresentado na figura 18.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{Readings_Settings_html.png}
+\caption{Página de recolha do nome do paciente}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{Patient_intermidiate_php.png}
+\caption{Página de desambiguação do nome do paciente}
+\end{figure}
+
+Este segundo \textit{form}, permite assim que o ficheiro seguinte saiba qual o SSN do paciente que o utilizador pretende, pelo que será dada a informação apenas de um paciente.
+
+Após a recolha de informação deste formulário, o utilizador é direccionado para a página final \textit{Patient.php} que irá apresentar a informação pretendida. No caso de o paciente não ter registos associados, é disposta a informação que indica este facto.
+
+São apresentadas de seguida os casos em que existe registos nas duas informações e em que não existe informação a apresentar.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{diogo.png}
+\caption{Apresentação dos \textit{Readings} e \textit{Settings}}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{ze.png}
+\caption{Apresentação vazia dos \textit{Readings} e \textit{Settings}}
+\end{figure}
+
+\pagebreak
+Seguindo a mesma lógica para a alínea (b), é feito o pedido do nome do paciente do qual se pretende fazer as transferências de \textit{devices} entre a PAN actual e a antiga, nos ficheiros \textit{Transfer\_device.html} e \textit{transfer\_intermediate.php}. A interface destas páginas é em tudo semelhante às apresentadas nas figuras 17 e 18, mudando apenas os títulos, pelo que não serão acrescentadas. Tendo o paciente sido escolhido, é apresentada a página \textit{transfer.php}, apresentada na figura 21, onde se pode visualizar todas as PANs associadas ao paciente, sendo especificada a PAN actual e a antiga mais recente.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{transfer_php.png}
+\caption{Apresentação vazia dos \textit{Readings} e \textit{Settings}}
+\end{figure}
+\vskip 9mm
+Ao seguir o \textit{link} \textit{Keep visualizing resultes}, a página \textit{transfer\_session2.php} irá apresentar os aparelhos ligados a ambas as PANs, tendo uma interface incorporada que permite escolher via \textit{checkboxes} quais os aparelhos que se pretende transferir da PAN antiga para a actual. No caso de a PAN antiga estar a ser utilizada, ou de os aparelhos já terem sido transferidos, as \textit{checkboxes} não serão apresentadas, pelo que não se realizará a transferência desse dispositivo.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.3]{transfer2.png}
+\caption{Apresentação dos dispositivos e interface de transferência}
+\end{figure}
+
+Por fim, após a transferência dos \textit{devices} pretendidos, aparecerá uma página \textit{transfer\_session3.php} que indicará se a transferência foi bem sucedida e quais os dispositivos transferidos.
+
+ \begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{transfer3.png}
+\caption{Apresentação dos dispositivos transferidos}
+\end{figure}
+
+Caso se pressione \textit{Go back}, aparecerá novamente a interface de transferência, sendo que é visível a impossibilidade de inserir novamente o dispositivo.
+
+ \begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.4]{transfer4.png}
+\caption{Apresentação dos dispositivos transferidos, após LG ter sido transferido}
+\end{figure}
+
+Na maioria das páginas, é dada a possibilidade de voltar à página anterior bem como ao menu inicial.
+\vskip 9mm
+No caso de as imagens apresentadas no relatório não coincidirem com as tentativas, significará que a base de dados foi modificada.
+\pagebreak
+\section{Anexos}
+Nesta secção são apresentados os códigos php, html e sql utilizados em cada secção.
 \end{document}
