@@ -57,5 +57,41 @@ Inicialmente, acrescentam-se as seguintes instruções de forma a apagar eventua
 \lstinputlisting{drop.sql}
 
 \section{\textit{Triggers} para prevenção de \textit{overlapping periods}}
+A função dos \textit{triggers} é de prevenir a inserção de associações a PAN's por parte de pacientes ou de aparelhos médicos em periodos de tempo sobrepostos. 
+
+A \textit{error message} deve ser apresentada de forma a evitar que ocorram casos,  para a tabela \textit{Wears}, como os seguintes:
+\vskip 5mm
+\begin{itemize}
+\item Paciente 1 está ligado a PAN1 e PAN2 ao mesmo tempo;
+
+\item  Paciente 1 e Paciente 2 estão ligados à PAN1 ao mesmo tempo.
+\end{itemize}
+
+A \textit{error message} deve ser apresentada de forma a evitar que ocorram casos,  para a tabela \textit{Connects}, como o seguinte: 
+
+\begin{itemize}
+
+\item Device 1 está ligado a PAN1 e PAN2 ao mesmo tempo.
+
+\end{itemize}
+\pagebreak
+\subsection{\textit{Triggers} de \textit{insert}}
+
+Os triggers desenvolvidos foram os seguintes:
+
+\lstinputlisting{insert.sql}
+
+Por forma a testar o funcionamento dos \textit{triggers} atrás apresentados, utilizámos a base de dados fornecida no ficheiro \textit{database\_triggers\_insert.sql}. Após correr as instruções, obtêm-se as seguintes tabelas:
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{tabelas_insert_triggers.png}
+\caption{Tabelas para teste de \textit{insert} dos \textit{triggers}}
+\end{figure}
+
+Os testes realizados foram sucessivas inserções de um dispositivo em PAN's diferentes sobreposto a pelo menos uma entrada da tabela.
+
+Os testes realizados estão contidos no ficheiro \textit{•}
+
+\subsection{\textit{Triggers} de \textit{insert}}
 
 \end{document}
