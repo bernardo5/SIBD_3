@@ -29,7 +29,7 @@
 
 \pagenumbering{arabic}
 \section{Criação das tabelas da base de dados}
-Para a criação das tabelas na base de dados, as intruções de SQL utilizadas foram as seguintes:
+Para a criação das tabelas na base de dados, as instruções de SQL utilizadas foram as seguintes:
 
 \lstinputlisting{database.sql}
 
@@ -60,7 +60,7 @@ Inicialmente, acrescentam-se as seguintes instruções de forma a apagar eventua
 \lstinputlisting{drop.sql}
 
 \section{\textit{Triggers} para prevenção de \textit{overlapping periods}}
-A função dos \textit{triggers} é de prevenir a inserção/actualização de associações a PANs por parte de pacientes ou de aparelhos médicos em periodos de tempo sobrepostos. 
+A função dos \textit{triggers} é de prevenir a inserção/atualização de associações a PANs por parte de pacientes ou de aparelhos médicos em períodos de tempo sobrepostos. 
 
 A \textit{error message} deve ser apresentada de forma a evitar que ocorram casos,  para a tabela \textit{Wears}, como os seguintes:
 \vskip 5mm
@@ -95,7 +95,7 @@ O \textit{trigger} para a tabela \textit{Connects} tem o seguinte código:
 
 \lstinputlisting{trigger_pan_device_insert.sql}
 
-Relativamente à tabela \textit{Wears}, o raciocínio aplicado é semelhante. Um paciente não pode ter duas PANs ao mesmo tempo e dois pacientes não podem partilhar a mesma PAN. Este caso, gera uma condição adicional, que não surgia no caso anterior. As condições são assim semelhantes às apresentadas anteriormente, sendo ainda verificado se o paciente se encontra na tabela e se a PAN que se pretende que o mesmo utilize está actualmente em utilização por um paciente distinto. No caso de o paciente se encontrar nos registos, verifica-se se a PAN que está a utilizar é a mesma e única no período de tempo.
+Relativamente à tabela \textit{Wears}, o raciocínio aplicado é semelhante. Um paciente não pode ter duas PANs ao mesmo tempo e dois pacientes não podem partilhar a mesma PAN. Este caso, gera uma condição adicional, que não surgia no caso anterior. As condições são assim semelhantes às apresentadas anteriormente, sendo ainda verificado se o paciente se encontra na tabela e se a PAN que se pretende que o mesmo utilize está atualmente em utilização por um paciente distinto. No caso de o paciente se encontrar nos registos, verifica-se se a PAN que está a utilizar é a mesma e única no período de tempo.
 \pagebreak
 
 O \textit{trigger} para a tabela \textit{Wears} tem o seguinte código:
@@ -120,7 +120,7 @@ Por forma a testar o funcionamento dos \textit{triggers} atrás apresentados, ut
 \vskip 7mm
 Os testes realizados foram sucessivas inserções de um dispositivo em PANs diferentes sobreposto a pelo menos uma entrada da tabela.
 
-Os testes realizados estão contidos nos ficheiros \textit{teste\_insert\_connects.sql} e \textit{teste\_insert\_connects.sql}, apresentados em anexo e que contem uma série de instruções e respectivos comentários.
+Os testes realizados estão contidos nos ficheiros \textit{teste\_insert\_connects.sql} e \textit{teste\_insert\_wears.sql}, apresentados em anexo e que contem uma série de instruções e respetivos comentários.
 
 Correndo os ficheiros de teste verifica-se um de quatro dos seguintes resultados, consoante as tabelas a alterar e cosoante seja uma um \textit{update}/inserção válido ou inválido:
 
@@ -151,9 +151,9 @@ Correndo os ficheiros de teste verifica-se um de quatro dos seguintes resultados
 Em caso de sucesso, ou seja, sem sobreposição, surge uma mensagem de erro devido ao facto de o período inserido não existir na tabela \textit{Period}. Caso estivesse, não ocorreria o erro e a tabela seria atualizada.
 \pagebreak
 \subsection{\textit{Triggers} de \textit{update}}
-À semelhança dos testes que realizámos para os \textit{triggers} de \textit{insert} para as duas tabelas, os ficheiros de teste para os \textit{triggers} de \textit{update} encontram-se no ficheiro .zip, com os nomes \textit{teste\_update\_connects.sql} e \textit{teste\_update\_wears.sql}.
+À semelhança dos testes que realizámos para os \textit{triggers} de \textit{insert} para as duas tabelas, os ficheiros de teste para os \textit{triggers} de \textit{update} encontram-se em anexo, com os nomes \textit{teste\_update\_connects.sql} e \textit{teste\_update\_wears.sql}.
 
-Os \textit{triggers} relativos a esta secção só diferem dos anteriores na medida em que são efectuados antes de um \textit{update} em vez de antes de um \textit{insert}. Assim, nos troços de código anteriores, onde se lê 
+Os \textit{triggers} relativos a esta secção só diferem dos anteriores na medida em que são efetuados antes de um \textit{update} em vez de antes de um \textit{insert}. Assim, nos troços de código anteriores, onde se lê 
 
 \textit{create trigger check\_overlap\_time\_period\_Patient\_PAN before insert on Wears} deve-se ler
 
@@ -182,7 +182,7 @@ Assim, a base de dados utilizada para os testes foi a presente no ficheiro \text
 
 Na tabela da figura 7, a linha que é atualizada é sempre a última, correspondente a um \textit{device} igual a pelo menos um que se encontra na tabela. Porém, possui um PAN diferente destes.
 
-Na tabela da figura 8, as linhas que são atualizadas são a segunda e última linhas que testam,  respectivamente, dois pacientes possuirem a mesma PAN simultaneamente e o mesmo paciente ter duas PANs simultaneamente.
+Na tabela da figura 8, as linhas que são atualizadas são a segunda e última linhas que testam,  respetivamente, dois pacientes possuírem a mesma PAN simultaneamente e o mesmo paciente ter duas PANs simultaneamente.
 \section{\textit{SQL queries}}
 \subsection*{(a)}
 A \textit{query} realizada para a alínea em questão foi a seguinte (presente no ficheiro \textit{3a.sql}):
@@ -230,7 +230,7 @@ Para o teste referido o resultado obtido será o seguinte:
 A explicação deste resultado, pode-se resumir em três pontos:
 
 \begin{enumerate}
-\item O Reading de RPG encontra-se dentro do período da data actual até 
+\item O Reading de RPG encontra-se dentro do período da data atual até 
 	menos 6 meses, Philips também mas Sony não. Por outro lado no PAN2
 	o Reading de LG encontra-se dentro do período da data actual até 
 	menos 6 meses, Samsung também, mas Panasonic não;
@@ -270,25 +270,25 @@ Para o teste em questão, foram criados nove Devices com manufacturer Philips co
 	A PAN1 possui três \textit{Devices}, PAN2 apenas um, PAN3 dois, e por
 	fim PAN4 três \textit{Devices}, tendo todos os dispositivos descrições diferentes.
 	
-	Os \textit{Patients} Bernardo e Diogo vivem em Quarteira e Alcochete respectivamente num período que abrange a data actual, enquanto que o \textit{Patient}.
-	Proença vive no Montijo num período que não abrange a data actual.
+	Os \textit{Patients} Bernardo e Diogo vivem em Quarteira e Alcochete respetivamente num período que abrange a data atual, enquanto que o \textit{Patient}.
+	Proença vive no Montijo num período que não abrange a data atual.
 	
 	Dos quatro \textit{Devices} que se encontram nos dois PANs que Bernardo utiliza, apenas
 	três cumprem as especificações todas. Bernardo utiliza o PAN1 numa data 
-	onde a data actual se encontra contida porém tal não acontece com PAN2,
-	utilizando este PAN num período que não inclui a data actual.
+	onde a data atual se encontra contida porém tal não acontece com PAN2,
+	utilizando este PAN num período que não inclui a data atual.
 	
 	Todos os \textit{Devices} que se encontram nas Pans de Diogo e de Proença
 	cumprem todas as especificações de tempo tanto de \textit{Wears} como \textit{Connects}
-	em relação à data actual.
+	em relação à data atual.
 	
 	Como Bernardo possui três \textit{Devices} que cumprem todas as especificações
 	vence perante Diogo uma vez que este possui apenas dois.
 	
-	Como Bernardo vive num munícipio numa data que abrange a actual vence
+	Como Bernardo vive num município numa data que abrange a atual vence
 	perante Proença uma vez que este não cumpre esta condição.
 	
-	Assim o munícipio que possui agora o maior número de \textit{Devices Philips}
+	Assim o município que possui agora o maior número de \textit{Devices Philips}
 	será Quarteira.
 	
 \subsection*{(c)}
@@ -326,7 +326,7 @@ O resultado obtido deverá ser o seguinte:
 	(Sony e Samsung)} associados, ambos ligados entre 2013 e 2014.
 	
 	O último paciente Zé Manel encontra-se de momento sem-abrigo, ou não
-	vive em nenhum munícipio presente na base de dados do \textit{Medical Center}.
+	vive em nenhum município presente na base de dados do \textit{Medical Center}.
 	Porém utiliza o PAN5 entre 2013 e 2014 com dois \textit{Devices (Siemens e HP)}
 	instalados nesse PAN entre 2013 e 2014.
 	
@@ -335,12 +335,12 @@ O resultado obtido deverá ser o seguinte:
 	\begin{itemize}
 	\item \textit{Philips} $\rightarrow$ pois encontra-se conectado entre 2013 e 2014 num intervalo
 	contido no período em que Bernardo utiliza o PAN durante o ano de 2014,
-	acrescentado ao facto que Bernardo vive num munícipio num intervalo
+	acrescentado ao facto que Bernardo vive num município num intervalo
 	também contido no período em que utiliza o PAN;
 	
 	\item \textit{Panasonic} $\rightarrow$ pois encontra-se conectado a PAN2 entre 2014 e 2015, num
 	intervalo contido no período em que Diogo utiliza o PAN durante o ano 
-	de 2014, acrescentado ao facto que Diogo vive num munícipio num intervalo
+	de 2014, acrescentado ao facto que Diogo vive num município num intervalo
 	também contido no período em que utiliza o PAN.
 	\end{itemize}
 	
@@ -351,15 +351,15 @@ O resultado obtido deverá ser o seguinte:
 	altura que Bernardo vive num município e utiliza essa PAN durante o ano de 2014.
 	
 	\item \textit{LG} $\rightarrow$ não cumpre a especificação de Diogo utilizar a PAN durante
-	o ano de 2014 simultaneamente quando vive num muncicípio em 2014 e ter
+	o ano de 2014 simultaneamente quando vive num município em 2014 e ter
 	\textit{Devices} ligados à PAN.
 	
 	\item \textit{Sony e Samsung} $\rightarrow$ não cumprem a especificação de Proença estar
-	a viver num munícipio durante um ano de 2014 simultaneamente a estar
+	a viver num município durante um ano de 2014 simultaneamente a estar
 	a utilizar uma PAN e essa PAN ter tais \textit{Devices} ligados.
 	
 	\item \textit{Siemens e HP} $\rightarrow$ não cumprem a especificação pois Zé Manel não
-	se encontra a viver num muncicípio coberto pelo Medical Center.
+	se encontra a viver num município coberto pelo Medical Center.
 	\end{itemize}		
 	
 \section{\textit{Web based application}}
@@ -367,7 +367,7 @@ Para a aplicação \textit{web}, foi criada uma página inicial,
 
 \textit{http://web.ist.utl.pt/ist175573/index\_\_.php} por forma a que o utilizador possa escolher quais as leituras e/ou alterações que pretende implementar na base de dados.
  
-Assim, tal como pode ser verificado na figura 16, é feita uma distinção para acções de consulta da base de dados e de alterações à mesma. Tendo o trabalho apenas um fim académico, não foram implementadas todas as funcionalidades que seriam de esperar numa base de dados a apresentar a um cliente. Como tal, as funcionalidades dispostas são apenas as pedidas nas alíneas a) e b) do ponto quatro do enunciado do problema.
+Assim, tal como pode ser verificado na figura 16, é feita uma distinção para ações de consulta da base de dados e de alterações à mesma. Tendo o trabalho apenas um fim académico, não foram implementadas todas as funcionalidades que seriam de esperar numa base de dados a apresentar a um cliente. Como tal, as funcionalidades dispostas são apenas as pedidas nas alíneas a) e b) do ponto quatro do enunciado do problema.
 
 \begin{figure}[ht!]
 \centering
@@ -377,7 +377,7 @@ Assim, tal como pode ser verificado na figura 16, é feita uma distinção para 
 	
 No ponto a), pede-se que dado um certo paciente, sejam dispostos todos os seus dados de \textit{readings} e \textit{settings}. O utilizador poderá assim aceder a esta funcionalidade pela hiperligação \textit{Readings and Settings of a patient} do conjunto \textit{Information check}.
 
-Ao fazê-lo, será redireccionado para uma página de formulário denominada \textit{Readings\_Settings.html} que pede o nome do paciente que se pretende saber as informações. Esta página encontra-se disposta na figura 17.
+Ao fazê-lo, será redirecionado para uma página de formulário denominada \textit{Readings\_Settings.html} que pede o nome do paciente que se pretende saber as informações. Esta página encontra-se disposta na figura 17.
 
 O resultado obtido no formulário passará posteriormente por uma página \textit{Patient\_intermidiate.php} com a finalidade de desambiguação. Assim, esta página, irá procurar todos os pacientes cujos nomes contenham a sequência de caracteres dadas pelo utilizador, questionando o mesmo qual dos pacientes é que se pretende obter os resultados.
 
@@ -397,7 +397,7 @@ No caso de o utilizador não escrever nenhuma sequência de caracteres, são apr
 
 Este segundo \textit{form}, permite assim que o ficheiro seguinte saiba qual o SSN do paciente que o utilizador pretende, pelo que será dada a informação apenas de um paciente.
 
-Após a recolha de informação deste formulário, o utilizador é direccionado para a página final \textit{Patient.php} que irá apresentar a informação pretendida. No caso de o paciente não ter registos associados, é disposta a informação que indica este facto.
+Após a recolha de informação deste formulário, o utilizador é direcionado para a página final \textit{Patient.php} que irá apresentar a informação pretendida. No caso de o paciente não ter registos associados, é disposta a informação que indica este facto.
 
 São apresentadas de seguida os casos em que existe registos nas duas informações e em que não existe informação a apresentar.
 
@@ -414,7 +414,7 @@ São apresentadas de seguida os casos em que existe registos nas duas informaç�
 \end{figure}
 
 \pagebreak
-Seguindo a mesma lógica para a alínea (b), é feito o pedido do nome do paciente do qual se pretende fazer as transferências de \textit{devices} entre a PAN actual e a antiga, nos ficheiros \textit{Transfer\_device.html} e \textit{transfer\_intermediate.php}. A interface destas páginas é em tudo semelhante às apresentadas nas figuras 17 e 18, mudando apenas os títulos, pelo que não serão acrescentadas. Tendo o paciente sido escolhido, é apresentada a página \textit{transfer.php}, apresentada na figura 21, onde se pode visualizar todas as PANs associadas ao paciente, sendo especificada a PAN actual e a antiga mais recente.
+Seguindo a mesma lógica para a alínea (b), é feito o pedido do nome do paciente do qual se pretende fazer as transferências de \textit{devices} entre a PAN atual e a antiga, nos ficheiros \textit{Transfer\_device.html} e \textit{transfer\_intermediate.php}. A interface destas páginas é em tudo semelhante às apresentadas nas figuras 17 e 18, mudando apenas os títulos, pelo que não serão acrescentadas. Tendo o paciente sido escolhido, é apresentada a página \textit{transfer.php}, apresentada na figura 21, onde se pode visualizar todas as PANs associadas ao paciente, sendo especificada a PAN actual e a antiga mais recente.
 
 \begin{figure}[ht!]
 \centering
