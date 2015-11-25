@@ -8,10 +8,10 @@ if(
 	WHERE(				
 	(Wears.start <= new.end) and  (Wears.end >= new.start)
 		 	 
-	AND ((new.patient != Wears.patient) AND
+	AND (((new.patient != Wears.patient) AND
 	 (new.pan = Wears.pan))
 	OR ((new.patient = Wears.patient) AND
-	 (new.pan != Wears.pan))
+	 (new.pan != Wears.pan)))
 	)
    )
 )

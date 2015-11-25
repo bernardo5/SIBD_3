@@ -1,4 +1,4 @@
 \BOOKMARK [1][-]{section.1}{Cria\347\343o das tabelas da base de dados}{}% 1
 \BOOKMARK [1][-]{section.2}{Triggers para preven\347\343o de overlapping periods}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Triggers de insert}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Triggers de insert}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Triggers de update}{section.2}% 4

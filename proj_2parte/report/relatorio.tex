@@ -90,8 +90,33 @@ Por forma a testar o funcionamento dos \textit{triggers} atrás apresentados, ut
 
 Os testes realizados foram sucessivas inserções de um dispositivo em PAN's diferentes sobreposto a pelo menos uma entrada da tabela.
 
-Os testes realizados estão contidos no ficheiro \textit{•}
+Os testes realizados estão contidos nos ficheiros \textit{teste\_insert\_connects.sql} e \textit{teste\_insert\_connects.sql}, apresetados em anexo e que contem as seguintes instrucções:
+\vskip 5mm
+\textit{teste\_insert\_connects.sql}:
+\lstinputlisting{teste_insert_connects.sql}
 
-\subsection{\textit{Triggers} de \textit{insert}}
+\pagebreak
+\textit{teste\_insert\_wears.sql}:
+\lstinputlisting{teste_insert_wears.sql}
+
+Correndo os ficheiros de teste verificam-se os seguintes resultados:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{insert_connects.png}
+\caption{Resultados dos testes do \textit{trigger} de inserção para a tabela \textit{Connects}}
+\end{figure}
+
+Verifica-se deste modo, que, tal como era esperado, as quatro primeiras tentativas de inserção de valores na tabela falharam devido à existência de \textit{overlap} e as restantes seriam inseridas caso os \textit{time periods} estivessem na tabela \textit{Period}.
+%Explicação dos resultados
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.7]{insert_wears.png}
+\caption{Resultados dos testes do \textit{trigger} de inserção para a tabela \textit{Wears}}
+\end{figure}
+
+%explicação dos resultados
+\subsection{\textit{Triggers} de \textit{update}}
 
 \end{document}
