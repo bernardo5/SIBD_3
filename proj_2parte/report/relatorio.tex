@@ -184,6 +184,183 @@ Na tabela da figura 7, a linha que é atualizada é sempre a última, correspond
 
 Na tabela da figura 8, as linhas que são atualizadas são a segunda e última linhas que testam,  respectivamente, dois pacientes possuirem a mesma PAN simultaneamente e o mesmo paciente ter duas PANs simultaneamente.
 \section{\textit{SQL queries}}
+\subsection*{(a)}
+A \textit{query} realizada para a alínea em questão foi a seguinte (presente no ficheiro \textit{3a.sql}):
 
+\lstinputlisting{3a.sql}
 
+Para testar o bom funcionamento do \textit{procedure}, utilizámos a base de dados presente em \textit{database3a.sql}, com o ficheiro de teste \textit{teste3a.sql}.
+
+As tabelas obtidas deverão ser as seguintes:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{3awears.jpg}
+\caption{Tabela \textit{Wears}}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{3aconnects.jpg}
+\caption{Tabela \textit{Connects}}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{3areading.jpg}
+\caption{Tabela \textit{Reading}}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{3adevice.jpg}
+\caption{Tabela \textit{Device}}
+\end{figure}
+
+Foram criados seis \textit{devices} de diferentes marcas, sendo que metade (RPG, Philips, Sony) foram associados à PAN cujo domínio é \textit{www.pan1.pt} e a restante (LG, Samsung, Panasonic) é colocada no PAN cujo domínio é \textit{www.pan2.pt}. Apenas um paciente, identificado pelo número 001-54245-1555555 irá conectar-se a estas PANs em dois períodos de tempo diferentes.
+\vskip 16mm
+Para o teste referido o resultado obtido será o seguinte:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{teste3a.jpg}
+\caption{Resultado do teste da \textit{query} 3 (a)}
+\end{figure}
+
+A explicação deste resultado, pode-se resumir em três pontos:
+
+\begin{enumerate}
+\item O Reading de RPG encontra-se dentro do período da data actual até 
+	menos 6 meses, Philips também mas Sony não. Por outro lado no PAN2
+	o Reading de LG encontra-se dentro do período da data actual até 
+	menos 6 meses, Samsung também, mas Panasonic não;
+\item O Reading de RPG encontra-se no período em que o Device está 
+	conectado ao PAN1, mas o Reading de Philips não. No PAN2 o Reading
+	de LG encontra-se dentro do período em que o Device está conectado  
+	ao PAN2, mas o Reading de Samsung não;
+\item O Reading de RPG encontra-se no período em que o Patient veste o
+	PAN1, mas o Reading de LG não se encontra no período em que o Patient
+	veste o PAN2.
+\end{enumerate}
+
+Desta forma, o primeiro ponto exclui Sony e Panasonic, o segundo ponto exclui Philips e Samsung e o terceiro Ponto exclui LG, restando RPG. A \textit{reading} associada a este aparelho encontra-se apresentada na figura 13.
+
+\subsection*{(b)}
+A \textit{query} realizada para a alínea em questão foi a seguinte (presente no ficheiro \textit{3b.sql}):
+
+\lstinputlisting{3b.sql}
+
+Para testar o bom funcionamento do \textit{procedure}, utilizámos a base de dados presente em \textit{database3b.sql}, com o ficheiro de teste \textit{teste3b.sql}.
+\vskip 5mm
+O resultado obtido deverá ser o seguinte:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{3b.jpg}
+\caption{Resultado do teste da \textit{query} 3 (b)}
+\end{figure}
+
+Para o teste em questão, foram criados nove Devices com manufacturer Philips com serial number
+	diferentes mas consecutivos, três pacientes correspondentes aos elementos
+	do grupo, três Municípios onde cada elemento viverá e quatro PANs.
+	
+	Para testar, fez-se com que o paciente Bernardo utilizasse duas PANS: PAN1
+	e PAN2. O paciente Diogo utilizasse a PAN3 e o paciente Proença utilizasse a PAN4.
+	
+	A PAN1 possui três \textit{Devices}, PAN2 apenas um, PAN3 dois, e por
+	fim PAN4 três \textit{Devices}, tendo todos os dispositivos descrições diferentes.
+	
+	Os \textit{Patients} Bernardo e Diogo vivem em Quarteira e Alcochete respectivamente num período que abrange a data actual, enquanto que o \textit{Patient}.
+	Proença vive no Montijo num período que não abrange a data actual.
+	
+	Dos quatro \textit{Devices} que se encontram nos dois PANs que Bernardo utiliza, apenas
+	três cumprem as especificações todas. Bernardo utiliza o PAN1 numa data 
+	onde a data actual se encontra contida porém tal não acontece com PAN2,
+	utilizando este PAN num período que não inclui a data actual.
+	
+	Todos os \textit{Devices} que se encontram nas Pans de Diogo e de Proença
+	cumprem todas as especificações de tempo tanto de \textit{Wears} como \textit{Connects}
+	em relação à data actual.
+	
+	Como Bernardo possui três \textit{Devices} que cumprem todas as especificações
+	vence perante Diogo uma vez que este possui apenas dois.
+	
+	Como Bernardo vive num munícipio numa data que abrange a actual vence
+	perante Proença uma vez que este não cumpre esta condição.
+	
+	Assim o munícipio que possui agora o maior número de \textit{Devices Philips}
+	será Quarteira.
+	
+\subsection*{(c)}
+A \textit{query} realizada para a alínea em questão foi a seguinte (presente no ficheiro \textit{3c.sql}):
+
+\lstinputlisting{3c.sql}
+
+Para testar o bom funcionamento do \textit{procedure}, utilizámos a base de dados presente em \textit{database3c.sql}, com o ficheiro de teste \textit{teste3c.sql}.
+O resultado obtido deverá ser o seguinte:
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.53]{teste3c.jpg}
+\caption{Resultado do teste da \textit{query} 3 (c)}
+\end{figure}
+
+	Foram criados oito \textit{Devices} todos descritos por \textit{scale}, mas com \textit{serial
+	number} e \textit{manufacturers} diferentes. Estes oito \textit{Devices} foram divididos
+	por quatro \textit{Patients} correspondentes aos três elementos do grupo e o sem-abrigo
+	Zé-Manel.
+	
+	O primeiro paciente Bernardo Gomes vive em Quarteira no ano de 2014,
+	e utiliza o PAN1 durante os anos de 2013 e 2014, sendo que essa PAN 
+	tem dois \textit{Devices (Philips e RPG)} conectados, um entre os anos 2013 e
+	2014 e o outro no ano de 2015.
+	
+	O segundo paciente Diogo Martins vive em Alcochete no ano de 2014, e
+	utiliza o PAN2 e PAN3 em duas alturas distintas, o primeiro entre 2014
+	e 2015 e o segundo entre 2012 e 2013, sendo que o PAN2 possui um \textit{Device 
+	(Panasonic)} ligado nos anos 2013 a 2015. O PAN3 tem também um dispositivo
+	(\textit{LG}) ligado nos anos 2014 e 2014.
+	
+	O terceiro paciente Diogo Proença vive no Montijo entre 2011 e 2012,
+	utilizando o PAN4 entre 2013 e 2014, sendo que o PAN4 possui dois \textit{Devices
+	(Sony e Samsung)} associados, ambos ligados entre 2013 e 2014.
+	
+	O último paciente Zé Manel encontra-se de momento sem-abrigo, ou não
+	vive em nenhum munícipio presente na base de dados do \textit{Medical Center}.
+	Porém utiliza o PAN5 entre 2013 e 2014 com dois \textit{Devices (Siemens e HP)}
+	instalados nesse PAN entre 2013 e 2014.
+	
+	O resultado da Query será o apresentado na figura 15, com os seguintes dispositivos:
+	
+	\begin{itemize}
+	\item \textit{Philips} $\rightarrow$ pois encontra-se conectado entre 2013 e 2014 num intervalo
+	contido no período em que Bernardo utiliza o PAN durante o ano de 2014,
+	acrescentado ao facto que Bernardo vive num munícipio num intervalo
+	também contido no período em que utiliza o PAN;
+	
+	\item \textit{Panasonic} $\rightarrow$ pois encontra-se conectado a PAN2 entre 2014 e 2015, num
+	intervalo contido no período em que Diogo utiliza o PAN durante o ano 
+	de 2014, acrescentado ao facto que Diogo vive num munícipio num intervalo
+	também contido no período em que utiliza o PAN.
+	\end{itemize}
+	
+	Os dispositivos restantes apresentados de seguida, não cumprem as especificações pelas seguintes razões:
+	
+	\begin{itemize}
+	\item \textit{RPG} $\rightarrow$ não cumpre a especificação de estar ligado ao PAN na mesma
+	altura que Bernardo vive num município e utiliza essa PAN durante o ano de 2014.
+	
+	\item \textit{LG} $\rightarrow$ não cumpre a especificação de Diogo utilizar a PAN durante
+	o ano de 2014 simultaneamente quando vive num muncicípio em 2014 e ter
+	\textit{Devices} ligados à PAN.
+	
+	\item \textit{Sony e Samsung} $\rightarrow$ não cumprem a especificação de Proença estar
+	a viver num munícipio durante um ano de 2014 simultaneamente a estar
+	a utilizar uma PAN e essa PAN ter tais \textit{Devices} ligados.
+	
+	\item \textit{Siemens e HP} $\rightarrow$ não cumprem a especificação pois Zé Manel não
+	se encontra a viver num muncicípio coberto pelo Medical Center.
+	\end{itemize}		
+	
+	
 \end{document}
