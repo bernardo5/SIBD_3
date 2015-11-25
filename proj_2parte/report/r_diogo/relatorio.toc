@@ -1,0 +1,6 @@
+\select@language {portuguese}
+\contentsline {section}{\numberline {1}Cria\IeC {\c c}\IeC {\~a}o das tabelas da base de dados}{1}{section.1}
+\contentsline {section}{\numberline {2}\textit {Triggers} para preven\IeC {\c c}\IeC {\~a}o de \textit {overlapping periods}}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}\textit {Triggers} de \textit {insert}}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}\textit {Triggers} de \textit {update}}{7}{subsection.2.2}
+\contentsline {section}{\numberline {3}\textit {SQL queries}}{7}{section.3}

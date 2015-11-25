@@ -1,0 +1,60 @@
+(Inserir na introdução dos triggers)
+A condição de sobreposição de períodos independentemente da tabela em questão obtém-se através da análise do problema e aplicando as Leis de Morgan. Ora existe não existe sobreposição de períodos em dois casos:
+A - O intervalo inserido/actualizado é completamente anterior aos intervalos já inseridos na tabela
+B - O intervalo inserido/actualizado é completamente posterior aos intervalos já inseridos na tabela.
+Ora, para um intervalo A definido por startA e endA, e um intervalo B definido por startB e endB, temos que o intervalo B e intervalo A não se encontram sobrepostos sempre que: StartA >= EndB ou EndA <= StartB.
+Negando esta condição, obtém-se todos os casos para os quais os intervalos A e B se encontram sobrepostos. Assim através das leis de Morgan obtém-se a seguinte condição para dois intervalos sobrepostos: StartA <= EndB  e  EndA >= StartB.
+Esta condição é aplicada em todos os triggers que se descrevem de seguida, como condição de sobreposição de intervalos.
+
+Triggers de Insert
+
+Para prevenir situações de sobreposição de períodos nas tabelas Wears e Connects quando se insere um novo elemento, criou-se triggers que reagissem quando houvesse alguma situação de sobreposição.
+Os triggers para cada uma das tabelas são em tudo semelhantes, actuando antes de se inserir novo elemento na tabela e realizando o mesmo tipo de instruções e condições. A única excepção é para o caso da tabela Wears que se insere uma condição adicional tendo em conta o contexto do problema.
+
+Ora para a tabela Connects, não se pode inserir o mesmo device em dois PANs ao mesmo tempo, logo para cada linha dentro da tabela onde é inserida o novo Device, será avaliado se esse Device é igual aos que estão no interir desta. Isto é possível ao se igualar manuf e snum na tabela Connects, aos elementos inserido nesta tavela. Para além disso, é verificado se o elemento inserido na tabela Connects possui um PAN associado diferente dos que estão dentro da tabela. Caso se cumpra estas duas condições é lançada uma mensagem de erro, indicando que há sobreposição de intervalos.
+O código implementado é o seguinte:
+(inserir código)
+
+Para se testar este código, criou-se a seguinte tabela Connects:
+(inserir imagem tabela)
+
+Criou-se posteriormente um script de seu nome teste_insert_connects.sql, onde se insere 6 condições, sendo as primeiras quatro, situações de sobreposição e as últimas duas situações em que não ocorre sobreposição. Os resultados obtidos são coerentes, disparando a mensagem de erro sempre que ocorre sobreposição, e uma mensagem de erro quando não há sobreposição, esta última originada simplesmente porque o período inserido não se encontra na tabela Period criada. Isto significa que seria possível inserir esse elemento na tabela, mas por não existir esse período na tabela Period é lançada uma mensagem de erro. Os resultados podem-se ver na seguinte imagem:
+(inserir imagem com resultados).
+
+
+Por outro lado, quando se considera a tabela Wears o racíocinio é o mesmo. Um paciente não pode ter duas PANS ao mesmo tempo e dois Pacientes não podem ter a mesma PAN ao mesmo tempo. Isto gera uma condição adicional, que não existia na tabela Connects.
+Para averiguar a existência de sobreposição de intervalos na tabela Wears, primeiro insere-se a condição de sobreposição de qualquer intervalo definido anteriormente. De seguida é verificado em cada linha da tabela se o número de Paciente é diferente dos que se encontram na tabela e se o PAN que ele estará associado é igual aos que se encontram na tabela. A última condição verifica o contrário, caso o número do Paciente inserido é o mesmo e ele tem um PAN diferente dos que estão no interior da tabela Wears. Caso se cumpra uma destas últimas condições é lançada uma mensagem de erro pois ocorreu sobreposição. O código implementado é o seguinte:
+(inserir código)
+
+Para testar o código criou-se a seguinte tabela Wears:
+(inserir tabela Wears)
+
+Tal como anteriormente, criou-se um script de teste para certificar que os resultados obtidos são os esperados. Neste caso o nome do script é teste_insert_wears.sql, e tal como o script anterior são testadas as condições que se impuseram ao se implementar o código, novamente com 4 situações de sobreposição e 2 de não sobreposição. Todavia como são avaliadas duas condições, criou-se as inserções necessárias de modo a testar-se completamente o trigger. 
+Os resultados obtidos coincidem com os esperados e encontram-se representados na imagem seguinte:
+(inserir imagem resultados)
+
+
+Triggers de Update
+
+Existe uma outra maneira de haver sobreposição de períodos nas tabelas Wears e Connects, a de actualização de períodos já existentes. De modo a evitar que estas actualizações provoquem sobreposição de intervalos criou-se triggers que agem antes que ser realize o update. 
+Os triggers implementados nesta secção só diferem dos triggers de insert na medida em que este é efectuado antes do update da tabela Connects ou antes da tabela Wears. A restante implementação é idêntica aos triggers de insert.
+No entanto, para testar o funcionamento correcto dos triggers de update foram realizados testes mais extensivos, pois existe uma maior número de casos de actualização possíveis do que casos de inserção.
+De qualquer maneira o código implementado para o trigger na tabela Connects é o seguinte:
+(inserir código)
+
+Para testar o trigger de update na tabela Connects criou-se a seguinte tabela:
+(inserir imagem tabela)
+
+Como nos casos anteriores é criado um script de teste de seu nome teste_update_connects.sql em que se avaliam 5 casos de sobreposição e 8 casos de não sobreposição. Estes casos encontram-se explícitos em comentário nos ficheiros de script anexados. A linha que é actualizada é sempre a última linha que se encontra na tabela Connects, correspondente a um Device igual a todos os que se encontram na tabela porém possui um PAN diferente. Avaliando-se todas as actualizações possíveis que provoquem sobreposição ou  não obtém-se os seguintes resultados:
+(inserir imagem resultados)
+
+Como se pode observar, os resultados obtidos são coerentes com os esperados.
+
+Para a tabela Wears, realizou-se o mesmo raciocínio aplicado no trigger anterior, sendo o código implementado o seguinte:
+(inserir código)
+
+A tabela para testar as condições impostas de actualização é dada por:
+(inserir tabela)
+
+Criou-se novamente um script de teste denominado de teste_update_wears.sql, e tal como no teste do trigger de insert, todos os testes são em duplicado uma vez que a sobreposição de intervalos nesta tabela é dada por uma de duas condições. A linha actualizada para a primeira condição (Dois pacientes não podem ter a mesma PAN ao mesmo tempo) é a segunda linha da tabela. Para a segunda condição (O mesmo paciente não pode ter duas PANs ao mesmo tempo) é actualizada a última condição. Correndo o script de teste obteve-se resultados que novamente coincidem com os esperados. Os resultados podem ser vistos aqui:
+(inserir imagem resultados)
