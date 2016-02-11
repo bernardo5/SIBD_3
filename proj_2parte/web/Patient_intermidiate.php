@@ -5,7 +5,7 @@
 		$patient_nam=$_REQUEST['patient_name'];
 		$host = "db.ist.utl.pt";
 		$user = "ist175573";
-		$pass = "swex6595";
+		$pass = "xxxx";
 		$dsn = "mysql:host=$host;dbname=$user";
 		try
 		{
