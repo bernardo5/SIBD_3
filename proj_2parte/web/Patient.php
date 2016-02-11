@@ -10,7 +10,7 @@
 		$_SESSION['patient_number']=$p_number;
 		$host = "db.ist.utl.pt";
 		$user = "ist175573";
-		$pass = "swex6595";
+		$pass = "xxxxx";
 		$dsn = "mysql:host=$host;dbname=$user";
 		try
 		{
